@@ -28,14 +28,14 @@ const formFields = [
 ]
 
 const seedData = [
-  { id: 'pj1', name: 'Enterprise Cloud Migration', client: 'TechVision Inc', status: 'In Progress', progress: 68, budget: 185000, team: 8, startDate: '2025-11-01', endDate: '2026-04-30' },
+  { id: 'pj1', name: 'Enterprise Cloud Migration', client: 'TechVision Inc', status: 'In Progress', progress: 68, budget: 185000, team: 8, startDate: '2026-11-01', endDate: '2026-04-30' },
   { id: 'pj2', name: 'Mobile App v3.0', client: 'BrightPath', status: 'On Track', progress: 42, budget: 120000, team: 6, startDate: '2026-01-10', endDate: '2026-06-15' },
-  { id: 'pj3', name: 'ERP Implementation', client: 'Meridian Corp', status: 'At Risk', progress: 35, budget: 340000, team: 12, startDate: '2025-09-01', endDate: '2026-03-31' },
+  { id: 'pj3', name: 'ERP Implementation', client: 'Meridian Corp', status: 'At Risk', progress: 35, budget: 340000, team: 12, startDate: '2026-09-01', endDate: '2026-03-31' },
   { id: 'pj4', name: 'Security Audit', client: 'Apex Group', status: 'In Progress', progress: 85, budget: 48000, team: 3, startDate: '2026-01-15', endDate: '2026-02-28' },
-  { id: 'pj5', name: 'Data Analytics Dashboard', client: 'DataFlow AI', status: 'Completed', progress: 100, budget: 95000, team: 5, startDate: '2025-10-01', endDate: '2026-01-20' },
-  { id: 'pj6', name: 'API Integration Platform', client: 'GlobalSoft', status: 'On Track', progress: 55, budget: 72000, team: 4, startDate: '2025-12-15', endDate: '2026-05-01' },
+  { id: 'pj5', name: 'Data Analytics Dashboard', client: 'DataFlow AI', status: 'Completed', progress: 100, budget: 95000, team: 5, startDate: '2026-10-01', endDate: '2026-01-20' },
+  { id: 'pj6', name: 'API Integration Platform', client: 'GlobalSoft', status: 'On Track', progress: 55, budget: 72000, team: 4, startDate: '2026-12-15', endDate: '2026-05-01' },
   { id: 'pj7', name: 'Website Redesign', client: 'CloudNine Tech', status: 'On Hold', progress: 20, budget: 35000, team: 3, startDate: '2026-02-01', endDate: '2026-04-15' },
-  { id: 'pj8', name: 'AI Chatbot Development', client: 'BlueOcean AI', status: 'In Progress', progress: 72, budget: 65000, team: 4, startDate: '2025-11-15', endDate: '2026-03-15' },
+  { id: 'pj8', name: 'AI Chatbot Development', client: 'BlueOcean AI', status: 'In Progress', progress: 72, budget: 65000, team: 4, startDate: '2026-11-15', endDate: '2026-03-15' },
 ]
 </script>
 

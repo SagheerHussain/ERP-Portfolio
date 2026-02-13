@@ -43,8 +43,8 @@ const seedData = [
   { id: 'e8', name: 'Robert Martinez', email: 'robert.m@company.com', phone: '+1 (555) 808-9090', department: 'Finance', position: 'CFO', startDate: '2017-04-01', status: 'Active', avatar: 'https://i.pravatar.cc/40?u=robert.m@company.com' },
   { id: 'e9', name: 'Anna Kowalski', email: 'anna.k@company.com', phone: '+1 (555) 909-1010', department: 'Operations', position: 'Operations Lead', startDate: '2022-07-18', status: 'Active', avatar: 'https://i.pravatar.cc/40?u=anna.k@company.com' },
   { id: 'e10', name: 'Thomas Wright', email: 'thomas.w@company.com', phone: '+1 (555) 010-1111', department: 'Support', position: 'Support Manager', startDate: '2023-05-22', status: 'Active', avatar: 'https://i.pravatar.cc/40?u=thomas.w@company.com' },
-  { id: 'e11', name: 'Sofia Nguyen', email: 'sofia.n@company.com', phone: '+1 (555) 121-2222', department: 'Engineering', position: 'Frontend Developer', startDate: '2024-01-08', status: 'Active', avatar: 'https://i.pravatar.cc/40?u=sofia.n@company.com' },
-  { id: 'e12', name: 'Marcus Thompson', email: 'marcus.t@company.com', phone: '+1 (555) 232-3333', department: 'Sales', position: 'Sales Rep', startDate: '2024-09-15', status: 'Active', avatar: 'https://i.pravatar.cc/40?u=marcus.t@company.com' },
+  { id: 'e11', name: 'Sofia Nguyen', email: 'sofia.n@company.com', phone: '+1 (555) 121-2222', department: 'Engineering', position: 'Frontend Developer', startDate: '2026-01-08', status: 'Active', avatar: 'https://i.pravatar.cc/40?u=sofia.n@company.com' },
+  { id: 'e12', name: 'Marcus Thompson', email: 'marcus.t@company.com', phone: '+1 (555) 232-3333', department: 'Sales', position: 'Sales Rep', startDate: '2026-09-15', status: 'Active', avatar: 'https://i.pravatar.cc/40?u=marcus.t@company.com' },
 ]
 </script>
 

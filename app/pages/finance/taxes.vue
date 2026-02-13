@@ -31,13 +31,13 @@ const formFields = [
 ]
 
 const seedData = [
-  { id: 'tx1', jurisdiction: 'Federal', taxType: 'Income Tax', rate: '21%', amount: 156000, period: 'Q4 2025', dueDate: '2026-03-15', status: 'Pending' },
+  { id: 'tx1', jurisdiction: 'Federal', taxType: 'Income Tax', rate: '21%', amount: 156000, period: 'Q4 2026', dueDate: '2026-03-15', status: 'Pending' },
   { id: 'tx2', jurisdiction: 'California', taxType: 'Sales Tax', rate: '7.25%', amount: 34200, period: 'Jan 2026', dueDate: '2026-02-28', status: 'Paid' },
   { id: 'tx3', jurisdiction: 'Federal', taxType: 'Payroll Tax', rate: '6.2%', amount: 47800, period: 'Jan 2026', dueDate: '2026-02-15', status: 'Paid' },
   { id: 'tx4', jurisdiction: 'New York', taxType: 'Sales Tax', rate: '8%', amount: 18400, period: 'Jan 2026', dueDate: '2026-02-20', status: 'Paid' },
-  { id: 'tx5', jurisdiction: 'California', taxType: 'Income Tax', rate: '8.84%', amount: 67400, period: 'Q4 2025', dueDate: '2026-04-15', status: 'Draft' },
+  { id: 'tx5', jurisdiction: 'California', taxType: 'Income Tax', rate: '8.84%', amount: 67400, period: 'Q4 2026', dueDate: '2026-04-15', status: 'Draft' },
   { id: 'tx6', jurisdiction: 'Federal', taxType: 'Income Tax', rate: '21%', amount: 0, period: 'Q1 2026', dueDate: '2026-06-15', status: 'Draft' },
-  { id: 'tx7', jurisdiction: 'EU', taxType: 'VAT', rate: '20%', amount: 25000, period: 'Q4 2025', dueDate: '2026-01-31', status: 'Overdue' },
+  { id: 'tx7', jurisdiction: 'EU', taxType: 'VAT', rate: '20%', amount: 25000, period: 'Q4 2026', dueDate: '2026-01-31', status: 'Overdue' },
   { id: 'tx8', jurisdiction: 'County', taxType: 'Property Tax', rate: '1.1%', amount: 10450, period: '2026 Annual', dueDate: '2026-04-10', status: 'Pending' },
 ]
 </script>

@@ -2,7 +2,7 @@
 import NumberFlow from '@number-flow/vue'
 import { TrendingDown, TrendingUp } from 'lucide-vue-next'
 
-const period = ref('Q4 2025')
+const period = ref('Q4 2026')
 
 const kpis = ref({
   totalAssets: 0,
@@ -86,14 +86,14 @@ const liabCompositionData = [
 ]
 
 const trendData = [
-  { quarter: 'Q1 2024', assets: 10200000, liabilities: 4800000, equity: 5400000 },
-  { quarter: 'Q2 2024', assets: 10800000, liabilities: 4650000, equity: 6150000 },
-  { quarter: 'Q3 2024', assets: 11300000, liabilities: 4500000, equity: 6800000 },
-  { quarter: 'Q4 2024', assets: 11900000, liabilities: 4400000, equity: 7500000 },
-  { quarter: 'Q1 2025', assets: 12100000, liabilities: 4380000, equity: 7720000 },
-  { quarter: 'Q2 2025', assets: 12300000, liabilities: 4360000, equity: 7940000 },
-  { quarter: 'Q3 2025', assets: 12600000, liabilities: 4340000, equity: 8260000 },
-  { quarter: 'Q4 2025', assets: 12850000, liabilities: 4320000, equity: 8530000 },
+  { quarter: 'Q1 2026', assets: 10200000, liabilities: 4800000, equity: 5400000 },
+  { quarter: 'Q2 2026', assets: 10800000, liabilities: 4650000, equity: 6150000 },
+  { quarter: 'Q3 2026', assets: 11300000, liabilities: 4500000, equity: 6800000 },
+  { quarter: 'Q4 2026', assets: 11900000, liabilities: 4400000, equity: 7500000 },
+  { quarter: 'Q1 2026', assets: 12100000, liabilities: 4380000, equity: 7720000 },
+  { quarter: 'Q2 2026', assets: 12300000, liabilities: 4360000, equity: 7940000 },
+  { quarter: 'Q3 2026', assets: 12600000, liabilities: 4340000, equity: 8260000 },
+  { quarter: 'Q4 2026', assets: 12850000, liabilities: 4320000, equity: 8530000 },
 ]
 
 const { setHeader } = usePageHeader()
@@ -109,17 +109,17 @@ setHeader({ title: 'Balance Sheet', icon: 'i-lucide-landmark', description: 'Con
           <SelectValue placeholder="Period" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="Q4 2025">
-            Q4 2025
+          <SelectItem value="Q4 2026">
+            Q4 2026
           </SelectItem>
-          <SelectItem value="Q3 2025">
-            Q3 2025
+          <SelectItem value="Q3 2026">
+            Q3 2026
           </SelectItem>
-          <SelectItem value="Q2 2025">
-            Q2 2025
+          <SelectItem value="Q2 2026">
+            Q2 2026
           </SelectItem>
-          <SelectItem value="Q1 2025">
-            Q1 2025
+          <SelectItem value="Q1 2026">
+            Q1 2026
           </SelectItem>
         </SelectContent>
       </Select>
@@ -149,7 +149,7 @@ setHeader({ title: 'Balance Sheet', icon: 'i-lucide-landmark', description: 'Con
             Year-over-year growth <TrendingUp class="size-4 text-emerald-500" />
           </div>
           <div class="text-muted-foreground">
-            vs. $11.9M in Q4 2024
+            vs. $11.9M in Q4 2026
           </div>
         </CardFooter>
       </Card>
@@ -172,7 +172,7 @@ setHeader({ title: 'Balance Sheet', icon: 'i-lucide-landmark', description: 'Con
             Declining steadily <TrendingDown class="size-4 text-emerald-500" />
           </div>
           <div class="text-muted-foreground">
-            Reduced by $80K from Q4 2024
+            Reduced by $80K from Q4 2026
           </div>
         </CardFooter>
       </Card>

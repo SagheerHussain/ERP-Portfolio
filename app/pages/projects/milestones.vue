@@ -24,7 +24,7 @@ const formFields = [
 ]
 
 const seedData = [
-  { id: 'ms1', title: 'Infrastructure Setup', project: 'Enterprise Cloud Migration', progress: 100, status: 'Completed', dueDate: '2025-12-15', owner: 'Michael Chen' },
+  { id: 'ms1', title: 'Infrastructure Setup', project: 'Enterprise Cloud Migration', progress: 100, status: 'Completed', dueDate: '2026-12-15', owner: 'Michael Chen' },
   { id: 'ms2', title: 'Data Migration Phase 1', project: 'Enterprise Cloud Migration', progress: 85, status: 'On Track', dueDate: '2026-02-28', owner: 'David Kim' },
   { id: 'ms3', title: 'UI/UX Design Sign-off', project: 'Mobile App v3.0', progress: 100, status: 'Completed', dueDate: '2026-02-01', owner: 'Priya Patel' },
   { id: 'ms4', title: 'Beta Release', project: 'Mobile App v3.0', progress: 40, status: 'On Track', dueDate: '2026-04-15', owner: 'Sofia Nguyen' },

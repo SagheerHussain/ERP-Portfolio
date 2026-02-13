@@ -44,7 +44,7 @@ const seedData = [
   { id: 'r5', position: 'Content Marketing Manager', department: 'Marketing', applicants: 38, interviews: 4, status: 'Open', priority: 'Medium', postedDate: '2026-02-08' },
   { id: 'r6', position: 'Financial Analyst', department: 'Finance', applicants: 29, interviews: 3, status: 'On Hold', priority: 'Low', postedDate: '2026-01-10' },
   { id: 'r7', position: 'HR Business Partner', department: 'HR', applicants: 18, interviews: 2, status: 'Open', priority: 'Medium', postedDate: '2026-02-10' },
-  { id: 'r8', position: 'Junior Frontend Developer', department: 'Engineering', applicants: 124, interviews: 15, status: 'Closed', priority: 'Low', postedDate: '2025-12-01' },
+  { id: 'r8', position: 'Junior Frontend Developer', department: 'Engineering', applicants: 124, interviews: 15, status: 'Closed', priority: 'Low', postedDate: '2026-12-01' },
   { id: 'r9', position: 'Sales Development Rep', department: 'Sales', applicants: 56, interviews: 7, status: 'In Progress', priority: 'Medium', postedDate: '2026-01-25' },
   { id: 'r10', position: 'Data Engineer', department: 'Engineering', applicants: 71, interviews: 9, status: 'Open', priority: 'High', postedDate: '2026-02-12' },
 ]

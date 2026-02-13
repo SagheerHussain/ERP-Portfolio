@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import NumberFlow from '@number-flow/vue'
 
-const period = ref('Q4 2025')
+const period = ref('Q4 2026')
 
 const ratioCategories = [
   {
@@ -121,14 +121,14 @@ const comparisons = [
 
 // Trend data
 const trendData = [
-  { quarter: 'Q1 2024', roe: 32.0, roa: 19.5, margin: 14.2 },
-  { quarter: 'Q2 2024', roe: 33.5, roa: 20.5, margin: 15.0 },
-  { quarter: 'Q3 2024', roe: 35.0, roa: 21.8, margin: 15.8 },
-  { quarter: 'Q4 2024', roe: 36.0, roa: 22.7, margin: 15.5 },
-  { quarter: 'Q1 2025', roe: 36.5, roa: 23.2, margin: 16.5 },
-  { quarter: 'Q2 2025', roe: 37.2, roa: 24.0, margin: 17.0 },
-  { quarter: 'Q3 2025', roe: 37.8, roa: 24.8, margin: 17.3 },
-  { quarter: 'Q4 2025', roe: 38.4, roa: 25.5, margin: 17.8 },
+  { quarter: 'Q1 2026', roe: 32.0, roa: 19.5, margin: 14.2 },
+  { quarter: 'Q2 2026', roe: 33.5, roa: 20.5, margin: 15.0 },
+  { quarter: 'Q3 2026', roe: 35.0, roa: 21.8, margin: 15.8 },
+  { quarter: 'Q4 2026', roe: 36.0, roa: 22.7, margin: 15.5 },
+  { quarter: 'Q1 2026', roe: 36.5, roa: 23.2, margin: 16.5 },
+  { quarter: 'Q2 2026', roe: 37.2, roa: 24.0, margin: 17.0 },
+  { quarter: 'Q3 2026', roe: 37.8, roa: 24.8, margin: 17.3 },
+  { quarter: 'Q4 2026', roe: 38.4, roa: 25.5, margin: 17.8 },
 ]
 
 const { setHeader } = usePageHeader()
@@ -144,14 +144,14 @@ setHeader({ title: 'Financial Ratios', icon: 'i-lucide-chart-no-axes-combined', 
           <SelectValue placeholder="Period" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="Q4 2025">
-            Q4 2025
+          <SelectItem value="Q4 2026">
+            Q4 2026
           </SelectItem>
-          <SelectItem value="Q3 2025">
-            Q3 2025
+          <SelectItem value="Q3 2026">
+            Q3 2026
           </SelectItem>
-          <SelectItem value="Q2 2025">
-            Q2 2025
+          <SelectItem value="Q2 2026">
+            Q2 2026
           </SelectItem>
         </SelectContent>
       </Select>

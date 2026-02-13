@@ -2,7 +2,7 @@
 import NumberFlow from '@number-flow/vue'
 import { TrendingUp } from 'lucide-vue-next'
 
-const period = ref('FY 2025')
+const period = ref('FY 2026')
 
 const kpis = ref({
   totalRevenue: 0,
@@ -113,11 +113,11 @@ setHeader({ title: 'Income Statement', icon: 'i-lucide-receipt', description: 'C
           <SelectValue placeholder="Period" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="FY 2025">
-            FY 2025
+          <SelectItem value="FY 2026">
+            FY 2026
           </SelectItem>
-          <SelectItem value="FY 2024">
-            FY 2024
+          <SelectItem value="FY 2026">
+            FY 2026
           </SelectItem>
           <SelectItem value="FY 2023">
             FY 2023
@@ -271,7 +271,7 @@ setHeader({ title: 'Income Statement', icon: 'i-lucide-receipt', description: 'C
           </div>
           <div>
             <CardTitle>Detailed Income Statement</CardTitle>
-            <CardDescription>For the fiscal year ended December 31, 2025</CardDescription>
+            <CardDescription>For the fiscal year ended December 31, 2026</CardDescription>
           </div>
         </div>
       </CardHeader>

@@ -106,14 +106,14 @@ function getScoreGrade(score: number) {
 
 // Trend data
 const healthTrend = [
-  { quarter: 'Q1 2024', stability: 78, profitability: 72, liquidity: 75, efficiency: 70, growth: 68 },
-  { quarter: 'Q2 2024', stability: 80, profitability: 75, liquidity: 78, efficiency: 73, growth: 72 },
-  { quarter: 'Q3 2024', stability: 83, profitability: 80, liquidity: 81, efficiency: 76, growth: 78 },
-  { quarter: 'Q4 2024', stability: 86, profitability: 82, liquidity: 83, efficiency: 78, growth: 80 },
-  { quarter: 'Q1 2025', stability: 88, profitability: 85, liquidity: 84, efficiency: 79, growth: 82 },
-  { quarter: 'Q2 2025', stability: 89, profitability: 86, liquidity: 85, efficiency: 80, growth: 83 },
-  { quarter: 'Q3 2025', stability: 91, profitability: 88, liquidity: 87, efficiency: 81, growth: 84 },
-  { quarter: 'Q4 2025', stability: 92, profitability: 89, liquidity: 88, efficiency: 82, growth: 85 },
+  { quarter: 'Q1 2026', stability: 78, profitability: 72, liquidity: 75, efficiency: 70, growth: 68 },
+  { quarter: 'Q2 2026', stability: 80, profitability: 75, liquidity: 78, efficiency: 73, growth: 72 },
+  { quarter: 'Q3 2026', stability: 83, profitability: 80, liquidity: 81, efficiency: 76, growth: 78 },
+  { quarter: 'Q4 2026', stability: 86, profitability: 82, liquidity: 83, efficiency: 78, growth: 80 },
+  { quarter: 'Q1 2026', stability: 88, profitability: 85, liquidity: 84, efficiency: 79, growth: 82 },
+  { quarter: 'Q2 2026', stability: 89, profitability: 86, liquidity: 85, efficiency: 80, growth: 83 },
+  { quarter: 'Q3 2026', stability: 91, profitability: 88, liquidity: 87, efficiency: 81, growth: 84 },
+  { quarter: 'Q4 2026', stability: 92, profitability: 89, liquidity: 88, efficiency: 82, growth: 85 },
 ]
 
 const scoreDistribution = healthCategories.map(c => ({ name: c.title, value: c.score }))

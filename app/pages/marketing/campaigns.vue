@@ -40,7 +40,7 @@ const seedData = [
   { id: 'cm3', name: 'Cloud Migration Webinar Series', channel: 'Webinar', status: 'Scheduled', budget: 8000, spent: 2400, leads: 0, roi: '—', startDate: '2026-03-01', endDate: '2026-03-30' },
   { id: 'cm4', name: 'Google Search - Brand Terms', channel: 'Google Ads', status: 'Running', budget: 12000, spent: 7200, leads: 189, roi: '510%', startDate: '2026-01-01', endDate: '2026-12-31' },
   { id: 'cm5', name: 'Customer Success Stories Blog', channel: 'Content', status: 'Running', budget: 5000, spent: 3200, leads: 45, roi: '380%', startDate: '2026-01-10', endDate: '2026-06-30' },
-  { id: 'cm6', name: 'Black Friday Early Access', channel: 'Email', status: 'Completed', budget: 10000, spent: 10000, leads: 412, roi: '680%', startDate: '2025-11-20', endDate: '2025-12-02' },
+  { id: 'cm6', name: 'Black Friday Early Access', channel: 'Email', status: 'Completed', budget: 10000, spent: 10000, leads: 412, roi: '680%', startDate: '2026-11-20', endDate: '2026-12-02' },
   { id: 'cm7', name: 'SMB Social Awareness', channel: 'Social Media', status: 'Paused', budget: 8000, spent: 4500, leads: 28, roi: '95%', startDate: '2026-01-20', endDate: '2026-03-20' },
   { id: 'cm8', name: 'Product Hunt Launch', channel: 'Social Media', status: 'Draft', budget: 3000, spent: 0, leads: 0, roi: '—', startDate: '2026-04-01', endDate: '2026-04-07' },
 ]

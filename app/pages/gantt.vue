@@ -49,48 +49,48 @@ const phases = ref<Phase[]>([
 // ── Tasks (Rich ERP Project Data) ──────────────────────
 const tasks = ref<GanttTask[]>([
   // Phase 1: Discovery & Planning
-  { id: 'T-001', name: 'Stakeholder Interviews', phase: 'discovery', start: '2025-01-06', end: '2025-01-17', progress: 100, status: 'completed', assignee: 'Sarah Chen', priority: 'critical', color: '#8b5cf6' },
-  { id: 'T-002', name: 'Requirements Documentation', phase: 'discovery', start: '2025-01-13', end: '2025-01-31', progress: 100, status: 'completed', assignee: 'James Wilson', priority: 'critical', dependencies: ['T-001'], color: '#8b5cf6' },
-  { id: 'T-003', name: 'Technical Architecture', phase: 'discovery', start: '2025-01-20', end: '2025-02-07', progress: 100, status: 'completed', assignee: 'Alex Rivera', priority: 'high', dependencies: ['T-001'], color: '#8b5cf6' },
-  { id: 'T-004', name: 'Project Roadmap Sign-off', phase: 'discovery', start: '2025-02-07', end: '2025-02-07', progress: 100, status: 'completed', assignee: 'Sarah Chen', priority: 'critical', dependencies: ['T-002', 'T-003'], milestone: true, color: '#8b5cf6' },
+  { id: 'T-001', name: 'Stakeholder Interviews', phase: 'discovery', start: '2026-01-06', end: '2026-01-17', progress: 100, status: 'completed', assignee: 'Sarah Chen', priority: 'critical', color: '#8b5cf6' },
+  { id: 'T-002', name: 'Requirements Documentation', phase: 'discovery', start: '2026-01-13', end: '2026-01-31', progress: 100, status: 'completed', assignee: 'James Wilson', priority: 'critical', dependencies: ['T-001'], color: '#8b5cf6' },
+  { id: 'T-003', name: 'Technical Architecture', phase: 'discovery', start: '2026-01-20', end: '2026-02-07', progress: 100, status: 'completed', assignee: 'Alex Rivera', priority: 'high', dependencies: ['T-001'], color: '#8b5cf6' },
+  { id: 'T-004', name: 'Project Roadmap Sign-off', phase: 'discovery', start: '2026-02-07', end: '2026-02-07', progress: 100, status: 'completed', assignee: 'Sarah Chen', priority: 'critical', dependencies: ['T-002', 'T-003'], milestone: true, color: '#8b5cf6' },
 
   // Phase 2: UI/UX Design
-  { id: 'T-005', name: 'User Research & Personas', phase: 'design', start: '2025-02-10', end: '2025-02-21', progress: 100, status: 'completed', assignee: 'Maya Patel', priority: 'high', dependencies: ['T-004'], color: '#ec4899' },
-  { id: 'T-006', name: 'Wireframes & Prototyping', phase: 'design', start: '2025-02-17', end: '2025-03-07', progress: 100, status: 'completed', assignee: 'Maya Patel', priority: 'high', dependencies: ['T-005'], color: '#ec4899' },
-  { id: 'T-007', name: 'Design System & Components', phase: 'design', start: '2025-02-24', end: '2025-03-21', progress: 85, status: 'in-progress', assignee: 'Leo Kim', priority: 'high', dependencies: ['T-005'], color: '#ec4899' },
-  { id: 'T-008', name: 'High-Fidelity Mockups', phase: 'design', start: '2025-03-10', end: '2025-03-28', progress: 60, status: 'in-progress', assignee: 'Maya Patel', priority: 'medium', dependencies: ['T-006'], color: '#ec4899' },
-  { id: 'T-009', name: 'Design Review & Approval', phase: 'design', start: '2025-03-28', end: '2025-03-28', progress: 0, status: 'upcoming', assignee: 'Sarah Chen', priority: 'critical', dependencies: ['T-007', 'T-008'], milestone: true, color: '#ec4899' },
+  { id: 'T-005', name: 'User Research & Personas', phase: 'design', start: '2026-02-10', end: '2026-02-21', progress: 100, status: 'completed', assignee: 'Maya Patel', priority: 'high', dependencies: ['T-004'], color: '#ec4899' },
+  { id: 'T-006', name: 'Wireframes & Prototyping', phase: 'design', start: '2026-02-17', end: '2026-03-07', progress: 100, status: 'completed', assignee: 'Maya Patel', priority: 'high', dependencies: ['T-005'], color: '#ec4899' },
+  { id: 'T-007', name: 'Design System & Components', phase: 'design', start: '2026-02-24', end: '2026-03-21', progress: 85, status: 'in-progress', assignee: 'Leo Kim', priority: 'high', dependencies: ['T-005'], color: '#ec4899' },
+  { id: 'T-008', name: 'High-Fidelity Mockups', phase: 'design', start: '2026-03-10', end: '2026-03-28', progress: 60, status: 'in-progress', assignee: 'Maya Patel', priority: 'medium', dependencies: ['T-006'], color: '#ec4899' },
+  { id: 'T-009', name: 'Design Review & Approval', phase: 'design', start: '2026-03-28', end: '2026-03-28', progress: 0, status: 'upcoming', assignee: 'Sarah Chen', priority: 'critical', dependencies: ['T-007', 'T-008'], milestone: true, color: '#ec4899' },
 
   // Phase 3: Backend Development
-  { id: 'T-010', name: 'Database Schema Design', phase: 'backend', start: '2025-03-03', end: '2025-03-14', progress: 100, status: 'completed', assignee: 'Alex Rivera', priority: 'critical', dependencies: ['T-003'], color: '#3b82f6' },
-  { id: 'T-011', name: 'Authentication & Authorization', phase: 'backend', start: '2025-03-10', end: '2025-03-28', progress: 90, status: 'in-progress', assignee: 'Daniel Osei', priority: 'critical', dependencies: ['T-010'], color: '#3b82f6' },
-  { id: 'T-012', name: 'Core API Development', phase: 'backend', start: '2025-03-17', end: '2025-04-18', progress: 65, status: 'in-progress', assignee: 'Alex Rivera', priority: 'critical', dependencies: ['T-010'], color: '#3b82f6' },
-  { id: 'T-013', name: 'Real-time WebSocket Layer', phase: 'backend', start: '2025-03-31', end: '2025-04-18', progress: 30, status: 'at-risk', assignee: 'Daniel Osei', priority: 'high', dependencies: ['T-011'], color: '#3b82f6' },
-  { id: 'T-014', name: 'File Storage & CDN Setup', phase: 'backend', start: '2025-04-07', end: '2025-04-18', progress: 10, status: 'at-risk', assignee: 'Alex Rivera', priority: 'medium', dependencies: ['T-012'], color: '#3b82f6' },
+  { id: 'T-010', name: 'Database Schema Design', phase: 'backend', start: '2026-03-03', end: '2026-03-14', progress: 100, status: 'completed', assignee: 'Alex Rivera', priority: 'critical', dependencies: ['T-003'], color: '#3b82f6' },
+  { id: 'T-011', name: 'Authentication & Authorization', phase: 'backend', start: '2026-03-10', end: '2026-03-28', progress: 90, status: 'in-progress', assignee: 'Daniel Osei', priority: 'critical', dependencies: ['T-010'], color: '#3b82f6' },
+  { id: 'T-012', name: 'Core API Development', phase: 'backend', start: '2026-03-17', end: '2026-04-18', progress: 65, status: 'in-progress', assignee: 'Alex Rivera', priority: 'critical', dependencies: ['T-010'], color: '#3b82f6' },
+  { id: 'T-013', name: 'Real-time WebSocket Layer', phase: 'backend', start: '2026-03-31', end: '2026-04-18', progress: 30, status: 'at-risk', assignee: 'Daniel Osei', priority: 'high', dependencies: ['T-011'], color: '#3b82f6' },
+  { id: 'T-014', name: 'File Storage & CDN Setup', phase: 'backend', start: '2026-04-07', end: '2026-04-18', progress: 10, status: 'at-risk', assignee: 'Alex Rivera', priority: 'medium', dependencies: ['T-012'], color: '#3b82f6' },
 
   // Phase 4: Frontend Development
-  { id: 'T-015', name: 'Component Library Setup', phase: 'frontend', start: '2025-03-24', end: '2025-04-04', progress: 75, status: 'in-progress', assignee: 'Leo Kim', priority: 'high', dependencies: ['T-007'], color: '#10b981' },
-  { id: 'T-016', name: 'Dashboard & Analytics Views', phase: 'frontend', start: '2025-04-07', end: '2025-04-25', progress: 20, status: 'in-progress', assignee: 'Leo Kim', priority: 'high', dependencies: ['T-015', 'T-012'], color: '#10b981' },
-  { id: 'T-017', name: 'CRM Module Frontend', phase: 'frontend', start: '2025-04-14', end: '2025-05-02', progress: 0, status: 'upcoming', assignee: 'Nina Vasquez', priority: 'critical', dependencies: ['T-015', 'T-012'], color: '#10b981' },
-  { id: 'T-018', name: 'Finance Module Frontend', phase: 'frontend', start: '2025-04-21', end: '2025-05-09', progress: 0, status: 'upcoming', assignee: 'Leo Kim', priority: 'high', dependencies: ['T-016'], color: '#10b981' },
-  { id: 'T-019', name: 'Inventory Module Frontend', phase: 'frontend', start: '2025-04-28', end: '2025-05-16', progress: 0, status: 'upcoming', assignee: 'Nina Vasquez', priority: 'medium', dependencies: ['T-017'], color: '#10b981' },
+  { id: 'T-015', name: 'Component Library Setup', phase: 'frontend', start: '2026-03-24', end: '2026-04-04', progress: 75, status: 'in-progress', assignee: 'Leo Kim', priority: 'high', dependencies: ['T-007'], color: '#10b981' },
+  { id: 'T-016', name: 'Dashboard & Analytics Views', phase: 'frontend', start: '2026-04-07', end: '2026-04-25', progress: 20, status: 'in-progress', assignee: 'Leo Kim', priority: 'high', dependencies: ['T-015', 'T-012'], color: '#10b981' },
+  { id: 'T-017', name: 'CRM Module Frontend', phase: 'frontend', start: '2026-04-14', end: '2026-05-02', progress: 0, status: 'upcoming', assignee: 'Nina Vasquez', priority: 'critical', dependencies: ['T-015', 'T-012'], color: '#10b981' },
+  { id: 'T-018', name: 'Finance Module Frontend', phase: 'frontend', start: '2026-04-21', end: '2026-05-09', progress: 0, status: 'upcoming', assignee: 'Leo Kim', priority: 'high', dependencies: ['T-016'], color: '#10b981' },
+  { id: 'T-019', name: 'Inventory Module Frontend', phase: 'frontend', start: '2026-04-28', end: '2026-05-16', progress: 0, status: 'upcoming', assignee: 'Nina Vasquez', priority: 'medium', dependencies: ['T-017'], color: '#10b981' },
 
   // Phase 5: Integration & Testing
-  { id: 'T-020', name: 'API Integration Testing', phase: 'integration', start: '2025-05-05', end: '2025-05-23', progress: 0, status: 'upcoming', assignee: 'Daniel Osei', priority: 'critical', dependencies: ['T-012', 'T-016'], color: '#f59e0b' },
-  { id: 'T-021', name: 'E2E Test Suite', phase: 'integration', start: '2025-05-12', end: '2025-05-30', progress: 0, status: 'upcoming', assignee: 'James Wilson', priority: 'high', dependencies: ['T-017'], color: '#f59e0b' },
-  { id: 'T-022', name: 'Performance & Load Testing', phase: 'integration', start: '2025-05-19', end: '2025-06-06', progress: 0, status: 'upcoming', assignee: 'Alex Rivera', priority: 'high', dependencies: ['T-020'], color: '#f59e0b' },
-  { id: 'T-023', name: 'UAT & Bug Fixes', phase: 'integration', start: '2025-05-26', end: '2025-06-13', progress: 0, status: 'upcoming', assignee: 'Maya Patel', priority: 'critical', dependencies: ['T-021'], color: '#f59e0b' },
+  { id: 'T-020', name: 'API Integration Testing', phase: 'integration', start: '2026-05-05', end: '2026-05-23', progress: 0, status: 'upcoming', assignee: 'Daniel Osei', priority: 'critical', dependencies: ['T-012', 'T-016'], color: '#f59e0b' },
+  { id: 'T-021', name: 'E2E Test Suite', phase: 'integration', start: '2026-05-12', end: '2026-05-30', progress: 0, status: 'upcoming', assignee: 'James Wilson', priority: 'high', dependencies: ['T-017'], color: '#f59e0b' },
+  { id: 'T-022', name: 'Performance & Load Testing', phase: 'integration', start: '2026-05-19', end: '2026-06-06', progress: 0, status: 'upcoming', assignee: 'Alex Rivera', priority: 'high', dependencies: ['T-020'], color: '#f59e0b' },
+  { id: 'T-023', name: 'UAT & Bug Fixes', phase: 'integration', start: '2026-05-26', end: '2026-06-13', progress: 0, status: 'upcoming', assignee: 'Maya Patel', priority: 'critical', dependencies: ['T-021'], color: '#f59e0b' },
 
   // Phase 6: Launch & Deployment
-  { id: 'T-024', name: 'Staging Environment Setup', phase: 'launch', start: '2025-06-02', end: '2025-06-13', progress: 0, status: 'upcoming', assignee: 'Alex Rivera', priority: 'high', dependencies: ['T-022'], color: '#ef4444' },
-  { id: 'T-025', name: 'Data Migration & Seeding', phase: 'launch', start: '2025-06-09', end: '2025-06-20', progress: 0, status: 'upcoming', assignee: 'Daniel Osei', priority: 'critical', dependencies: ['T-024'], color: '#ef4444' },
-  { id: 'T-026', name: 'Production Deployment', phase: 'launch', start: '2025-06-16', end: '2025-06-27', progress: 0, status: 'upcoming', assignee: 'Alex Rivera', priority: 'critical', dependencies: ['T-023', 'T-025'], color: '#ef4444' },
-  { id: 'T-027', name: '🚀 Go Live!', phase: 'launch', start: '2025-06-27', end: '2025-06-27', progress: 0, status: 'upcoming', assignee: 'Sarah Chen', priority: 'critical', dependencies: ['T-026'], milestone: true, color: '#ef4444' },
+  { id: 'T-024', name: 'Staging Environment Setup', phase: 'launch', start: '2026-06-02', end: '2026-06-13', progress: 0, status: 'upcoming', assignee: 'Alex Rivera', priority: 'high', dependencies: ['T-022'], color: '#ef4444' },
+  { id: 'T-025', name: 'Data Migration & Seeding', phase: 'launch', start: '2026-06-09', end: '2026-06-20', progress: 0, status: 'upcoming', assignee: 'Daniel Osei', priority: 'critical', dependencies: ['T-024'], color: '#ef4444' },
+  { id: 'T-026', name: 'Production Deployment', phase: 'launch', start: '2026-06-16', end: '2026-06-27', progress: 0, status: 'upcoming', assignee: 'Alex Rivera', priority: 'critical', dependencies: ['T-023', 'T-025'], color: '#ef4444' },
+  { id: 'T-027', name: '🚀 Go Live!', phase: 'launch', start: '2026-06-27', end: '2026-06-27', progress: 0, status: 'upcoming', assignee: 'Sarah Chen', priority: 'critical', dependencies: ['T-026'], milestone: true, color: '#ef4444' },
 ])
 
 // ── Timeline Computation ───────────────────────────────
-const timelineStart = computed(() => new Date('2025-01-06'))
-const timelineEnd = computed(() => new Date('2025-07-04'))
+const timelineStart = computed(() => new Date('2026-01-06'))
+const timelineEnd = computed(() => new Date('2026-07-04'))
 
 const totalDays = computed(() => {
   return Math.ceil((timelineEnd.value.getTime() - timelineStart.value.getTime()) / (1000 * 60 * 60 * 24))
@@ -186,7 +186,7 @@ function getTaskStyle(task: GanttTask) {
 
 // ── Today indicator ────────────────────────────────────
 const todayOffset = computed(() => {
-  const today = new Date('2025-03-26') // Simulated "today" for demo
+  const today = new Date('2026-03-26') // Simulated "today" for demo
   const days = Math.ceil((today.getTime() - timelineStart.value.getTime()) / (1000 * 60 * 60 * 24))
   return days * dayWidth.value
 })
@@ -284,6 +284,45 @@ function getBarClasses(task: GanttTask) {
   if (task.status === 'blocked')
     return 'opacity-40'
   return ''
+}
+
+// ── Scroll Sync ────────────────────────────────────────
+const headerTimelineRef = ref<HTMLElement | null>(null)
+const bodyTimelineRef = ref<HTMLElement | null>(null)
+const leftPanelRef = ref<HTMLElement | null>(null)
+
+let isSyncing = false
+
+function onBodyScroll() {
+  if (isSyncing)
+    return
+  isSyncing = true
+  if (headerTimelineRef.value && bodyTimelineRef.value) {
+    headerTimelineRef.value.scrollLeft = bodyTimelineRef.value.scrollLeft
+  }
+  requestAnimationFrame(() => { isSyncing = false })
+}
+
+function onHeaderScroll() {
+  if (isSyncing)
+    return
+  isSyncing = true
+  if (bodyTimelineRef.value && headerTimelineRef.value) {
+    bodyTimelineRef.value.scrollLeft = headerTimelineRef.value.scrollLeft
+  }
+  requestAnimationFrame(() => { isSyncing = false })
+}
+
+function onBodyVerticalScroll() {
+  if (leftPanelRef.value && bodyTimelineRef.value) {
+    leftPanelRef.value.scrollTop = bodyTimelineRef.value.scrollTop
+  }
+}
+
+function onLeftPanelScroll() {
+  if (bodyTimelineRef.value && leftPanelRef.value) {
+    bodyTimelineRef.value.scrollTop = leftPanelRef.value.scrollTop
+  }
 }
 </script>
 
@@ -431,8 +470,12 @@ function getBarClasses(task: GanttTask) {
           <Icon name="i-lucide-folder-tree" class="size-4 text-muted-foreground" />
           <span class="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Tasks</span>
         </div>
-        <!-- Timeline header -->
-        <div class="flex-1 overflow-x-auto gantt-scroll">
+        <!-- Timeline header (synced with body) -->
+        <div
+          ref="headerTimelineRef"
+          class="flex-1 overflow-x-auto gantt-scroll-header"
+          @scroll="onHeaderScroll"
+        >
           <div :style="{ width: `${timelineWidth}px` }" class="relative">
             <!-- Month labels -->
             <div class="flex border-b bg-muted/20">
@@ -463,7 +506,11 @@ function getBarClasses(task: GanttTask) {
       <!-- Body -->
       <div class="flex max-h-[600px]">
         <!-- Left panel: task list -->
-        <div class="w-[320px] shrink-0 border-r overflow-y-auto gantt-scroll-y">
+        <div
+          ref="leftPanelRef"
+          class="w-[320px] shrink-0 border-r overflow-y-auto gantt-scroll-y"
+          @scroll="onLeftPanelScroll"
+        >
           <template v-for="phase in phases" :key="phase.id">
             <div
               v-if="getPhaseTasksFiltered(phase.id).length > 0"
@@ -529,8 +576,12 @@ function getBarClasses(task: GanttTask) {
           </template>
         </div>
 
-        <!-- Right panel: timeline bars -->
-        <div class="flex-1 overflow-auto gantt-scroll">
+        <!-- Right panel: timeline bars (drives horizontal scroll) -->
+        <div
+          ref="bodyTimelineRef"
+          class="flex-1 overflow-auto gantt-scroll"
+          @scroll="onBodyScroll(); onBodyVerticalScroll()"
+        >
           <div :style="{ width: `${timelineWidth}px` }" class="relative">
             <template v-for="phase in phases" :key="phase.id">
               <template v-if="getPhaseTasksFiltered(phase.id).length > 0">
@@ -760,6 +811,16 @@ function getBarClasses(task: GanttTask) {
 }
 .gantt-scroll::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--muted-foreground) / 0.4);
+}
+
+/* Header timeline: scrollable but scrollbar hidden (synced via JS) */
+.gantt-scroll-header {
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.gantt-scroll-header::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
 .gantt-scroll-y::-webkit-scrollbar {
