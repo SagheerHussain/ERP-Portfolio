@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import NumberFlow from '@number-flow/vue'
-import { TrendingUp, TrendingDown } from 'lucide-vue-next'
+import { TrendingUp } from 'lucide-vue-next'
 
 const period = ref('FY 2025')
 
@@ -113,9 +113,15 @@ setHeader({ title: 'Income Statement', icon: 'i-lucide-receipt', description: 'C
           <SelectValue placeholder="Period" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="FY 2025">FY 2025</SelectItem>
-          <SelectItem value="FY 2024">FY 2024</SelectItem>
-          <SelectItem value="FY 2023">FY 2023</SelectItem>
+          <SelectItem value="FY 2025">
+            FY 2025
+          </SelectItem>
+          <SelectItem value="FY 2024">
+            FY 2024
+          </SelectItem>
+          <SelectItem value="FY 2023">
+            FY 2023
+          </SelectItem>
         </SelectContent>
       </Select>
       <Button variant="outline">
@@ -140,8 +146,12 @@ setHeader({ title: 'Income Statement', icon: 'i-lucide-receipt', description: 'C
           </CardAction>
         </CardHeader>
         <CardFooter class="flex-col items-start gap-1 text-sm">
-          <div class="flex gap-2 font-medium">Strong growth across all segments <TrendingUp class="size-4 text-emerald-500" /></div>
-          <div class="text-muted-foreground">vs. $16.15M last year</div>
+          <div class="flex gap-2 font-medium">
+            Strong growth across all segments <TrendingUp class="size-4 text-emerald-500" />
+          </div>
+          <div class="text-muted-foreground">
+            vs. $16.15M last year
+          </div>
         </CardFooter>
       </Card>
 
@@ -159,8 +169,12 @@ setHeader({ title: 'Income Statement', icon: 'i-lucide-receipt', description: 'C
           </CardAction>
         </CardHeader>
         <CardFooter class="flex-col items-start gap-1 text-sm">
-          <div class="flex gap-2 font-medium">Gross margin expanding <TrendingUp class="size-4 text-emerald-500" /></div>
-          <div class="text-muted-foreground">Margin: 48.3% (vs 45.5%)</div>
+          <div class="flex gap-2 font-medium">
+            Gross margin expanding <TrendingUp class="size-4 text-emerald-500" />
+          </div>
+          <div class="text-muted-foreground">
+            Margin: 48.3% (vs 45.5%)
+          </div>
         </CardFooter>
       </Card>
 
@@ -178,8 +192,12 @@ setHeader({ title: 'Income Statement', icon: 'i-lucide-receipt', description: 'C
           </CardAction>
         </CardHeader>
         <CardFooter class="flex-col items-start gap-1 text-sm">
-          <div class="flex gap-2 font-medium">Operating leverage kicking in <TrendingUp class="size-4 text-emerald-500" /></div>
-          <div class="text-muted-foreground">EBIT margin: 23.6%</div>
+          <div class="flex gap-2 font-medium">
+            Operating leverage kicking in <TrendingUp class="size-4 text-emerald-500" />
+          </div>
+          <div class="text-muted-foreground">
+            EBIT margin: 23.6%
+          </div>
         </CardFooter>
       </Card>
 
@@ -197,8 +215,12 @@ setHeader({ title: 'Income Statement', icon: 'i-lucide-receipt', description: 'C
           </CardAction>
         </CardHeader>
         <CardFooter class="flex-col items-start gap-1 text-sm">
-          <div class="flex gap-2 font-medium">Record profitability <TrendingUp class="size-4 text-emerald-500" /></div>
-          <div class="text-muted-foreground">Net margin: 17.8%</div>
+          <div class="flex gap-2 font-medium">
+            Record profitability <TrendingUp class="size-4 text-emerald-500" />
+          </div>
+          <div class="text-muted-foreground">
+            Net margin: 17.8%
+          </div>
         </CardFooter>
       </Card>
     </div>
@@ -256,7 +278,9 @@ setHeader({ title: 'Income Statement', icon: 'i-lucide-receipt', description: 'C
       <CardContent class="p-0">
         <!-- Revenue -->
         <div class="px-6 py-3 bg-muted/30 border-y">
-          <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Revenue</h4>
+          <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+            Revenue
+          </h4>
         </div>
         <div class="divide-y">
           <div v-for="item in revenue" :key="item.name" class="grid grid-cols-12 items-center px-6 py-3 hover:bg-muted/20 transition-colors">
@@ -281,7 +305,9 @@ setHeader({ title: 'Income Statement', icon: 'i-lucide-receipt', description: 'C
 
         <!-- Cost of Revenue -->
         <div class="px-6 py-3 bg-muted/30 border-y">
-          <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Cost of Revenue</h4>
+          <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+            Cost of Revenue
+          </h4>
         </div>
         <div class="divide-y">
           <div v-for="item in costOfRevenue" :key="item.name" class="grid grid-cols-12 items-center px-6 py-3 hover:bg-muted/20 transition-colors">
@@ -309,7 +335,9 @@ setHeader({ title: 'Income Statement', icon: 'i-lucide-receipt', description: 'C
 
         <!-- Operating Expenses -->
         <div class="px-6 py-3 bg-muted/30 border-y">
-          <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Operating Expenses</h4>
+          <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+            Operating Expenses
+          </h4>
         </div>
         <div class="divide-y">
           <div v-for="item in operatingExpenses" :key="item.name" class="grid grid-cols-12 items-center px-6 py-3 hover:bg-muted/20 transition-colors">
@@ -337,7 +365,9 @@ setHeader({ title: 'Income Statement', icon: 'i-lucide-receipt', description: 'C
 
         <!-- Other Income/Expenses -->
         <div class="px-6 py-3 bg-muted/30 border-y">
-          <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Other Income / (Expenses)</h4>
+          <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+            Other Income / (Expenses)
+          </h4>
         </div>
         <div class="divide-y">
           <div v-for="item in otherItems" :key="item.name" class="grid grid-cols-12 items-center px-6 py-3 hover:bg-muted/20 transition-colors">

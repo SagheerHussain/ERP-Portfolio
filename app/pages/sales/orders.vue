@@ -15,8 +15,11 @@ const formFields = [
   { key: 'total', label: 'Total ($)', type: 'number' as const, placeholder: '500' },
   { key: 'items', label: 'Items Count', type: 'number' as const, placeholder: '3' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Pending', value: 'Pending' }, { label: 'Processing', value: 'Processing' },
-    { label: 'Shipped', value: 'Shipped' }, { label: 'Delivered', value: 'Delivered' }, { label: 'Cancelled', value: 'Cancelled' },
+    { label: 'Pending', value: 'Pending' },
+    { label: 'Processing', value: 'Processing' },
+    { label: 'Shipped', value: 'Shipped' },
+    { label: 'Delivered', value: 'Delivered' },
+    { label: 'Cancelled', value: 'Cancelled' },
   ] },
   { key: 'orderDate', label: 'Order Date', type: 'date' as const },
   { key: 'tracking', label: 'Tracking #', placeholder: 'USP-123456789' },

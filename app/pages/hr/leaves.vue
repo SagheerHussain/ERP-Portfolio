@@ -12,15 +12,19 @@ const columns = [
 const formFields = [
   { key: 'employee', label: 'Employee', placeholder: 'Sarah Johnson' },
   { key: 'type', label: 'Leave Type', type: 'select' as const, options: [
-    { label: 'Annual', value: 'Annual' }, { label: 'Sick', value: 'Sick' },
-    { label: 'Personal', value: 'Personal' }, { label: 'Maternity', value: 'Maternity' },
+    { label: 'Annual', value: 'Annual' },
+    { label: 'Sick', value: 'Sick' },
+    { label: 'Personal', value: 'Personal' },
+    { label: 'Maternity', value: 'Maternity' },
   ] },
   { key: 'startDate', label: 'Start Date', type: 'date' as const },
   { key: 'endDate', label: 'End Date', type: 'date' as const },
   { key: 'days', label: 'Days', type: 'number' as const, placeholder: '3' },
   { key: 'reason', label: 'Reason', type: 'textarea' as const, placeholder: 'Reason for leave...' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Pending', value: 'Pending' }, { label: 'Approved', value: 'Approved' }, { label: 'Rejected', value: 'Rejected' },
+    { label: 'Pending', value: 'Pending' },
+    { label: 'Approved', value: 'Approved' },
+    { label: 'Rejected', value: 'Rejected' },
   ] },
 ]
 

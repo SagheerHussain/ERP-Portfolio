@@ -15,8 +15,11 @@ const formFields = [
   { key: 'total', label: 'Total ($)', type: 'number' as const, placeholder: '50000' },
   { key: 'items', label: 'Line Items', type: 'number' as const, placeholder: '5' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Draft', value: 'Draft' }, { label: 'Sent', value: 'Sent' }, { label: 'Partial', value: 'Partial' },
-    { label: 'Completed', value: 'Completed' }, { label: 'Cancelled', value: 'Cancelled' },
+    { label: 'Draft', value: 'Draft' },
+    { label: 'Sent', value: 'Sent' },
+    { label: 'Partial', value: 'Partial' },
+    { label: 'Completed', value: 'Completed' },
+    { label: 'Cancelled', value: 'Cancelled' },
   ] },
   { key: 'orderDate', label: 'Order Date', type: 'date' as const },
   { key: 'expectedDate', label: 'Expected Delivery', type: 'date' as const },

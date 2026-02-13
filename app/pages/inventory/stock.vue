@@ -13,14 +13,18 @@ const formFields = [
   { key: 'sku', label: 'SKU', placeholder: 'SKU-001' },
   { key: 'product', label: 'Product Name', placeholder: 'Widget Pro' },
   { key: 'warehouse', label: 'Warehouse', type: 'select' as const, options: [
-    { label: 'Main HQ', value: 'Main HQ' }, { label: 'East Wing', value: 'East Wing' },
-    { label: 'West Depot', value: 'West Depot' }, { label: 'South Hub', value: 'South Hub' },
+    { label: 'Main HQ', value: 'Main HQ' },
+    { label: 'East Wing', value: 'East Wing' },
+    { label: 'West Depot', value: 'West Depot' },
+    { label: 'South Hub', value: 'South Hub' },
   ] },
   { key: 'quantity', label: 'Quantity', type: 'number' as const, placeholder: '100' },
   { key: 'value', label: 'Value ($)', type: 'number' as const, placeholder: '5000' },
   { key: 'reorderPoint', label: 'Reorder Point', type: 'number' as const, placeholder: '25' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'In Stock', value: 'In Stock' }, { label: 'Low Stock', value: 'Low Stock' }, { label: 'Out of Stock', value: 'Out of Stock' },
+    { label: 'In Stock', value: 'In Stock' },
+    { label: 'Low Stock', value: 'Low Stock' },
+    { label: 'Out of Stock', value: 'Out of Stock' },
   ] },
 ]
 

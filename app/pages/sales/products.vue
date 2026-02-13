@@ -12,14 +12,18 @@ const formFields = [
   { key: 'name', label: 'Product Name', placeholder: 'Cloud Storage Pro' },
   { key: 'sku', label: 'SKU', placeholder: 'CSP-001' },
   { key: 'category', label: 'Category', type: 'select' as const, options: [
-    { label: 'Software', value: 'Software' }, { label: 'Hardware', value: 'Hardware' },
-    { label: 'Services', value: 'Services' }, { label: 'Accessories', value: 'Accessories' },
+    { label: 'Software', value: 'Software' },
+    { label: 'Hardware', value: 'Hardware' },
+    { label: 'Services', value: 'Services' },
+    { label: 'Accessories', value: 'Accessories' },
     { label: 'Licenses', value: 'Licenses' },
   ] },
   { key: 'price', label: 'Price ($)', type: 'number' as const, placeholder: '99' },
   { key: 'stock', label: 'Stock', type: 'number' as const, placeholder: '100' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Active', value: 'Active' }, { label: 'Out of Stock', value: 'Out of Stock' }, { label: 'Inactive', value: 'Inactive' },
+    { label: 'Active', value: 'Active' },
+    { label: 'Out of Stock', value: 'Out of Stock' },
+    { label: 'Inactive', value: 'Inactive' },
   ] },
   { key: 'description', label: 'Description', type: 'textarea' as const, placeholder: 'Product description...' },
 ]

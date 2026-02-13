@@ -46,8 +46,12 @@ setHeader({ title: props.title, description: props.description, icon: props.icon
     <div v-if="stats?.length" class="grid grid-cols-2 gap-4 md:grid-cols-4">
       <Card v-for="(stat, i) in stats" :key="i" class="@container/stat">
         <CardHeader class="pb-2">
-          <CardDescription class="text-xs">{{ stat.label }}</CardDescription>
-          <CardTitle class="text-2xl font-semibold tabular-nums">{{ stat.value }}</CardTitle>
+          <CardDescription class="text-xs">
+            {{ stat.label }}
+          </CardDescription>
+          <CardTitle class="text-2xl font-semibold tabular-nums">
+            {{ stat.value }}
+          </CardTitle>
         </CardHeader>
       </Card>
     </div>
@@ -61,11 +65,15 @@ setHeader({ title: props.title, description: props.description, icon: props.icon
             <div class="flex items-center justify-center rounded-lg bg-primary/10 p-2 transition-colors group-hover:bg-primary/20">
               <Icon :name="feature.icon" class="size-5 text-primary" />
             </div>
-            <CardTitle class="text-base font-semibold">{{ feature.title }}</CardTitle>
+            <CardTitle class="text-base font-semibold">
+              {{ feature.title }}
+            </CardTitle>
           </div>
         </CardHeader>
         <CardContent class="relative">
-          <p class="text-sm text-muted-foreground leading-relaxed">{{ feature.description }}</p>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            {{ feature.description }}
+          </p>
         </CardContent>
       </Card>
     </div>
@@ -76,7 +84,9 @@ setHeader({ title: props.title, description: props.description, icon: props.icon
         <div class="flex items-center justify-center rounded-full bg-muted p-4 mb-4">
           <Icon :name="icon" class="size-10 text-muted-foreground" />
         </div>
-        <h3 class="text-lg font-semibold">{{ title }} Module</h3>
+        <h3 class="text-lg font-semibold">
+          {{ title }} Module
+        </h3>
         <p class="mt-2 text-sm text-muted-foreground max-w-md">
           This module is part of the Full Stack CRM enterprise suite. Connect your backend to start managing data in real-time.
         </p>

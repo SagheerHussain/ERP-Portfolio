@@ -14,8 +14,10 @@ const formFields = [
   { key: 'company', label: 'Company', placeholder: 'Acme Corp' },
   { key: 'value', label: 'Deal Value ($)', type: 'number' as const, placeholder: '50000' },
   { key: 'stage', label: 'Stage', type: 'select' as const, options: [
-    { label: 'Discovery', value: 'Discovery' }, { label: 'Proposal', value: 'Proposal' },
-    { label: 'Negotiation', value: 'Negotiation' }, { label: 'Closed Won', value: 'Closed Won' },
+    { label: 'Discovery', value: 'Discovery' },
+    { label: 'Proposal', value: 'Proposal' },
+    { label: 'Negotiation', value: 'Negotiation' },
+    { label: 'Closed Won', value: 'Closed Won' },
     { label: 'Closed Lost', value: 'Closed Lost' },
   ] },
   { key: 'probability', label: 'Probability (%)', type: 'number' as const, placeholder: '75' },

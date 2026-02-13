@@ -13,8 +13,10 @@ const formFields = [
   { key: 'name', label: 'Project Name', placeholder: 'Website Redesign' },
   { key: 'client', label: 'Client', placeholder: 'TechVision Inc' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'In Progress', value: 'In Progress' }, { label: 'On Track', value: 'On Track' },
-    { label: 'At Risk', value: 'At Risk' }, { label: 'On Hold', value: 'On Hold' },
+    { label: 'In Progress', value: 'In Progress' },
+    { label: 'On Track', value: 'On Track' },
+    { label: 'At Risk', value: 'At Risk' },
+    { label: 'On Hold', value: 'On Hold' },
     { label: 'Completed', value: 'Completed' },
   ] },
   { key: 'progress', label: 'Progress (%)', type: 'number' as const, placeholder: '65' },

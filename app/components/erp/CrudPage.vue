@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { toast } from 'vue-sonner'
 import type { CrudColumn, CrudFormField } from '~/composables/useCrud'
+import { toast } from 'vue-sonner'
 
 const props = defineProps<{
   storeKey: string
@@ -31,7 +31,8 @@ const formData = ref<Record<string, any>>({})
 
 // Computed
 const filteredItems = computed(() => {
-  if (!search.value) return items.value
+  if (!search.value)
+    return items.value
   const q = search.value.toLowerCase()
   return items.value.filter((item: any) =>
     props.columns.some(col =>
@@ -180,12 +181,14 @@ function getBadgeClass(value: string): string {
 }
 
 function formatCurrency(value: any): string {
-  if (value === null || value === undefined) return '—'
+  if (value === null || value === undefined)
+    return '—'
   return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Number(value))
 }
 
 function formatDate(value: string): string {
-  if (!value) return '—'
+  if (!value)
+    return '—'
   try {
     return new Date(value).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
   }
@@ -193,19 +196,20 @@ function formatDate(value: string): string {
 }
 
 function formatNumber(value: any): string {
-  if (value === null || value === undefined) return '—'
+  if (value === null || value === undefined)
+    return '—'
   return new Intl.NumberFormat('en-US').format(Number(value))
 }
 
 function getInitials(name: string): string {
-  if (!name) return '??'
+  if (!name)
+    return '??'
   return name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)
 }
 </script>
 
 <template>
   <div class="w-full flex flex-col gap-6">
-
     <!-- Toolbar -->
     <div class="flex flex-wrap items-center justify-between gap-4">
       <div class="relative flex-1 max-w-sm">
@@ -248,7 +252,9 @@ function getInitials(name: string): string {
                 <div v-if="col.type === 'avatar'" class="flex items-center gap-3">
                   <Avatar class="size-8 border">
                     <AvatarImage :src="item.avatar" :alt="item[col.key]" />
-                    <AvatarFallback class="text-xs">{{ getInitials(item[col.key]) }}</AvatarFallback>
+                    <AvatarFallback class="text-xs">
+                      {{ getInitials(item[col.key]) }}
+                    </AvatarFallback>
                   </Avatar>
                   <span class="font-medium">{{ item[col.key] }}</span>
                 </div>

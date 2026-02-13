@@ -17,7 +17,9 @@ const formFields = [
   { key: 'rating', label: 'Rating (out of 5)', placeholder: '4.5' },
   { key: 'onTimeRate', label: 'On-Time Delivery (%)', type: 'number' as const, placeholder: '95' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Active', value: 'Active' }, { label: 'Inactive', value: 'Inactive' }, { label: 'Under Review', value: 'Under Review' },
+    { label: 'Active', value: 'Active' },
+    { label: 'Inactive', value: 'Inactive' },
+    { label: 'Under Review', value: 'Under Review' },
   ] },
   { key: 'address', label: 'Address', type: 'textarea' as const, placeholder: '123 Main St, City, State' },
 ]

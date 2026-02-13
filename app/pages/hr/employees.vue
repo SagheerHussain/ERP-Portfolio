@@ -14,15 +14,21 @@ const formFields = [
   { key: 'email', label: 'Email', type: 'email' as const, placeholder: 'jane@company.com' },
   { key: 'phone', label: 'Phone', placeholder: '+1 (555) 000-0000' },
   { key: 'department', label: 'Department', type: 'select' as const, options: [
-    { label: 'Engineering', value: 'Engineering' }, { label: 'Sales', value: 'Sales' },
-    { label: 'Marketing', value: 'Marketing' }, { label: 'HR', value: 'HR' },
-    { label: 'Finance', value: 'Finance' }, { label: 'Operations', value: 'Operations' },
-    { label: 'Support', value: 'Support' }, { label: 'Product', value: 'Product' },
+    { label: 'Engineering', value: 'Engineering' },
+    { label: 'Sales', value: 'Sales' },
+    { label: 'Marketing', value: 'Marketing' },
+    { label: 'HR', value: 'HR' },
+    { label: 'Finance', value: 'Finance' },
+    { label: 'Operations', value: 'Operations' },
+    { label: 'Support', value: 'Support' },
+    { label: 'Product', value: 'Product' },
   ] },
   { key: 'position', label: 'Position', placeholder: 'Software Engineer' },
   { key: 'startDate', label: 'Start Date', type: 'date' as const },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Active', value: 'Active' }, { label: 'On Leave', value: 'On Leave' }, { label: 'Inactive', value: 'Inactive' },
+    { label: 'Active', value: 'Active' },
+    { label: 'On Leave', value: 'On Leave' },
+    { label: 'Inactive', value: 'Inactive' },
   ] },
 ]
 

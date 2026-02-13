@@ -12,15 +12,22 @@ const formFields = [
   { key: 'code', label: 'Account Code', placeholder: '1000' },
   { key: 'name', label: 'Account Name', placeholder: 'Cash & Equivalents' },
   { key: 'type', label: 'Account Type', type: 'select' as const, options: [
-    { label: 'Asset', value: 'Asset' }, { label: 'Liability', value: 'Liability' },
-    { label: 'Equity', value: 'Equity' }, { label: 'Revenue', value: 'Revenue' }, { label: 'Expense', value: 'Expense' },
+    { label: 'Asset', value: 'Asset' },
+    { label: 'Liability', value: 'Liability' },
+    { label: 'Equity', value: 'Equity' },
+    { label: 'Revenue', value: 'Revenue' },
+    { label: 'Expense', value: 'Expense' },
   ] },
   { key: 'balance', label: 'Balance ($)', type: 'number' as const, placeholder: '50000' },
   { key: 'currency', label: 'Currency', type: 'select' as const, options: [
-    { label: 'USD', value: 'USD' }, { label: 'EUR', value: 'EUR' }, { label: 'GBP', value: 'GBP' }, { label: 'CAD', value: 'CAD' },
+    { label: 'USD', value: 'USD' },
+    { label: 'EUR', value: 'EUR' },
+    { label: 'GBP', value: 'GBP' },
+    { label: 'CAD', value: 'CAD' },
   ] },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Active', value: 'Active' }, { label: 'Inactive', value: 'Inactive' },
+    { label: 'Active', value: 'Active' },
+    { label: 'Inactive', value: 'Inactive' },
   ] },
   { key: 'description', label: 'Description', type: 'textarea' as const, placeholder: 'Account description...' },
 ]

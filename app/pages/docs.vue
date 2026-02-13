@@ -184,7 +184,6 @@ const industries = [
               Explore Dashboard
             </NuxtLink>
           </Button>
-
         </div>
       </div>
     </div>
@@ -196,7 +195,9 @@ const industries = [
           <div class="text-3xl font-bold tabular-nums text-primary">
             <NumberFlow :value="stats.modules" />
           </div>
-          <p class="text-sm text-muted-foreground mt-1">Enterprise Modules</p>
+          <p class="text-sm text-muted-foreground mt-1">
+            Enterprise Modules
+          </p>
         </CardContent>
       </Card>
       <Card class="text-center border-primary/10 bg-gradient-to-t from-primary/5 to-transparent">
@@ -204,7 +205,9 @@ const industries = [
           <div class="text-3xl font-bold tabular-nums text-primary">
             <NumberFlow :value="stats.components" suffix="+" />
           </div>
-          <p class="text-sm text-muted-foreground mt-1">UI Components</p>
+          <p class="text-sm text-muted-foreground mt-1">
+            UI Components
+          </p>
         </CardContent>
       </Card>
       <Card class="text-center border-primary/10 bg-gradient-to-t from-primary/5 to-transparent">
@@ -212,7 +215,9 @@ const industries = [
           <div class="text-3xl font-bold tabular-nums text-primary">
             <NumberFlow :value="stats.pages" suffix="+" />
           </div>
-          <p class="text-sm text-muted-foreground mt-1">Ready Pages</p>
+          <p class="text-sm text-muted-foreground mt-1">
+            Ready Pages
+          </p>
         </CardContent>
       </Card>
       <Card class="text-center border-primary/10 bg-gradient-to-t from-primary/5 to-transparent">
@@ -220,7 +225,9 @@ const industries = [
           <div class="text-3xl font-bold tabular-nums text-primary">
             <NumberFlow :value="stats.features" suffix="+" />
           </div>
-          <p class="text-sm text-muted-foreground mt-1">Features</p>
+          <p class="text-sm text-muted-foreground mt-1">
+            Features
+          </p>
         </CardContent>
       </Card>
     </div>
@@ -232,8 +239,12 @@ const industries = [
           <Icon name="i-lucide-boxes" class="size-5 text-primary" />
         </div>
         <div>
-          <h2 class="text-2xl font-bold tracking-tight">Enterprise Modules</h2>
-          <p class="text-sm text-muted-foreground">Every module you need to run a modern business</p>
+          <h2 class="text-2xl font-bold tracking-tight">
+            Enterprise Modules
+          </h2>
+          <p class="text-sm text-muted-foreground">
+            Every module you need to run a modern business
+          </p>
         </div>
       </div>
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -250,12 +261,16 @@ const industries = [
                   <Icon :name="mod.icon" class="size-5" :class="mod.color" />
                 </div>
                 <div>
-                  <CardTitle class="text-base font-semibold group-hover:text-primary transition-colors">{{ mod.title }}</CardTitle>
+                  <CardTitle class="text-base font-semibold group-hover:text-primary transition-colors">
+                    {{ mod.title }}
+                  </CardTitle>
                 </div>
               </div>
             </CardHeader>
             <CardContent class="space-y-3">
-              <p class="text-sm text-muted-foreground leading-relaxed">{{ mod.description }}</p>
+              <p class="text-sm text-muted-foreground leading-relaxed">
+                {{ mod.description }}
+              </p>
               <div class="flex flex-wrap gap-1.5">
                 <Badge v-for="feature in mod.features" :key="feature" variant="secondary" class="text-xs font-normal">
                   {{ feature }}
@@ -274,8 +289,12 @@ const industries = [
           <Icon name="i-lucide-cpu" class="size-5 text-primary" />
         </div>
         <div>
-          <h2 class="text-2xl font-bold tracking-tight">Technology Stack</h2>
-          <p class="text-sm text-muted-foreground">Built with modern, battle-tested technologies</p>
+          <h2 class="text-2xl font-bold tracking-tight">
+            Technology Stack
+          </h2>
+          <p class="text-sm text-muted-foreground">
+            Built with modern, battle-tested technologies
+          </p>
         </div>
       </div>
       <div class="grid grid-cols-2 gap-3 md:grid-cols-4">
@@ -285,8 +304,12 @@ const industries = [
               <Icon :name="tech.icon" class="size-4 text-primary" />
             </div>
             <div>
-              <p class="text-sm font-semibold">{{ tech.name }}</p>
-              <p class="text-xs text-muted-foreground">{{ tech.description }}</p>
+              <p class="text-sm font-semibold">
+                {{ tech.name }}
+              </p>
+              <p class="text-xs text-muted-foreground">
+                {{ tech.description }}
+              </p>
             </div>
           </CardContent>
         </Card>
@@ -300,8 +323,12 @@ const industries = [
           <Icon name="i-lucide-globe" class="size-5 text-primary" />
         </div>
         <div>
-          <h2 class="text-2xl font-bold tracking-tight">Industry Ready</h2>
-          <p class="text-sm text-muted-foreground">Designed to adapt to any vertical market</p>
+          <h2 class="text-2xl font-bold tracking-tight">
+            Industry Ready
+          </h2>
+          <p class="text-sm text-muted-foreground">
+            Designed to adapt to any vertical market
+          </p>
         </div>
       </div>
       <div class="grid grid-cols-2 gap-3 md:grid-cols-4">
@@ -310,8 +337,12 @@ const industries = [
             <div class="flex items-center justify-center rounded-xl bg-muted p-3 group-hover:bg-primary/10 transition-colors">
               <Icon :name="industry.icon" class="size-6 text-muted-foreground group-hover:text-primary transition-colors" />
             </div>
-            <p class="text-sm font-semibold">{{ industry.name }}</p>
-            <p class="text-xs text-muted-foreground">{{ industry.description }}</p>
+            <p class="text-sm font-semibold">
+              {{ industry.name }}
+            </p>
+            <p class="text-xs text-muted-foreground">
+              {{ industry.description }}
+            </p>
           </CardContent>
         </Card>
       </div>
@@ -324,75 +355,115 @@ const industries = [
           <Icon name="i-lucide-sparkles" class="size-5 text-primary" />
         </div>
         <div>
-          <h2 class="text-2xl font-bold tracking-tight">Platform Highlights</h2>
-          <p class="text-sm text-muted-foreground">What sets this platform apart</p>
+          <h2 class="text-2xl font-bold tracking-tight">
+            Platform Highlights
+          </h2>
+          <p class="text-sm text-muted-foreground">
+            What sets this platform apart
+          </p>
         </div>
       </div>
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
         <Card class="border-dashed">
           <CardHeader>
             <div class="flex items-center gap-3">
-              <div class="flex items-center justify-center rounded-lg bg-emerald-500/10 p-2"><Icon name="i-lucide-palette" class="size-5 text-emerald-500" /></div>
-              <CardTitle class="text-base">9 Theme Colors + Dark Mode</CardTitle>
+              <div class="flex items-center justify-center rounded-lg bg-emerald-500/10 p-2">
+                <Icon name="i-lucide-palette" class="size-5 text-emerald-500" />
+              </div>
+              <CardTitle class="text-base">
+                9 Theme Colors + Dark Mode
+              </CardTitle>
             </div>
           </CardHeader>
           <CardContent>
-            <p class="text-sm text-muted-foreground">Choose from 9 curated color themes with full dark/light mode support. Customizable via the built-in settings panel.</p>
+            <p class="text-sm text-muted-foreground">
+              Choose from 9 curated color themes with full dark/light mode support. Customizable via the built-in settings panel.
+            </p>
           </CardContent>
         </Card>
         <Card class="border-dashed">
           <CardHeader>
             <div class="flex items-center gap-3">
-              <div class="flex items-center justify-center rounded-lg bg-blue-500/10 p-2"><Icon name="i-lucide-smartphone" class="size-5 text-blue-500" /></div>
-              <CardTitle class="text-base">Fully Responsive</CardTitle>
+              <div class="flex items-center justify-center rounded-lg bg-blue-500/10 p-2">
+                <Icon name="i-lucide-smartphone" class="size-5 text-blue-500" />
+              </div>
+              <CardTitle class="text-base">
+                Fully Responsive
+              </CardTitle>
             </div>
           </CardHeader>
           <CardContent>
-            <p class="text-sm text-muted-foreground">Every page and component is optimized for desktop, tablet, and mobile with adaptive layouts and touch-friendly interactions.</p>
+            <p class="text-sm text-muted-foreground">
+              Every page and component is optimized for desktop, tablet, and mobile with adaptive layouts and touch-friendly interactions.
+            </p>
           </CardContent>
         </Card>
         <Card class="border-dashed">
           <CardHeader>
             <div class="flex items-center gap-3">
-              <div class="flex items-center justify-center rounded-lg bg-violet-500/10 p-2"><Icon name="i-lucide-zap" class="size-5 text-violet-500" /></div>
-              <CardTitle class="text-base">Type-Safe & Performant</CardTitle>
+              <div class="flex items-center justify-center rounded-lg bg-violet-500/10 p-2">
+                <Icon name="i-lucide-zap" class="size-5 text-violet-500" />
+              </div>
+              <CardTitle class="text-base">
+                Type-Safe & Performant
+              </CardTitle>
             </div>
           </CardHeader>
           <CardContent>
-            <p class="text-sm text-muted-foreground">Full TypeScript coverage with Zod validation, Vue 3 Composition API, and Vite 7 for blazing-fast development and builds.</p>
+            <p class="text-sm text-muted-foreground">
+              Full TypeScript coverage with Zod validation, Vue 3 Composition API, and Vite 7 for blazing-fast development and builds.
+            </p>
           </CardContent>
         </Card>
         <Card class="border-dashed">
           <CardHeader>
             <div class="flex items-center gap-3">
-              <div class="flex items-center justify-center rounded-lg bg-amber-500/10 p-2"><Icon name="i-lucide-accessibility" class="size-5 text-amber-500" /></div>
-              <CardTitle class="text-base">WCAG Accessible</CardTitle>
+              <div class="flex items-center justify-center rounded-lg bg-amber-500/10 p-2">
+                <Icon name="i-lucide-accessibility" class="size-5 text-amber-500" />
+              </div>
+              <CardTitle class="text-base">
+                WCAG Accessible
+              </CardTitle>
             </div>
           </CardHeader>
           <CardContent>
-            <p class="text-sm text-muted-foreground">Built with Reka UI headless primitives ensuring keyboard navigation, screen reader support, and ARIA compliance throughout.</p>
+            <p class="text-sm text-muted-foreground">
+              Built with Reka UI headless primitives ensuring keyboard navigation, screen reader support, and ARIA compliance throughout.
+            </p>
           </CardContent>
         </Card>
         <Card class="border-dashed">
           <CardHeader>
             <div class="flex items-center gap-3">
-              <div class="flex items-center justify-center rounded-lg bg-rose-500/10 p-2"><Icon name="i-lucide-lock" class="size-5 text-rose-500" /></div>
-              <CardTitle class="text-base">Auth-Ready</CardTitle>
+              <div class="flex items-center justify-center rounded-lg bg-rose-500/10 p-2">
+                <Icon name="i-lucide-lock" class="size-5 text-rose-500" />
+              </div>
+              <CardTitle class="text-base">
+                Auth-Ready
+              </CardTitle>
             </div>
           </CardHeader>
           <CardContent>
-            <p class="text-sm text-muted-foreground">7 pre-built authentication pages including login, register, forgot password, and multiple OTP verification layouts.</p>
+            <p class="text-sm text-muted-foreground">
+              7 pre-built authentication pages including login, register, forgot password, and multiple OTP verification layouts.
+            </p>
           </CardContent>
         </Card>
         <Card class="border-dashed">
           <CardHeader>
             <div class="flex items-center gap-3">
-              <div class="flex items-center justify-center rounded-lg bg-teal-500/10 p-2"><Icon name="i-lucide-plug" class="size-5 text-teal-500" /></div>
-              <CardTitle class="text-base">API-First Architecture</CardTitle>
+              <div class="flex items-center justify-center rounded-lg bg-teal-500/10 p-2">
+                <Icon name="i-lucide-plug" class="size-5 text-teal-500" />
+              </div>
+              <CardTitle class="text-base">
+                API-First Architecture
+              </CardTitle>
             </div>
           </CardHeader>
           <CardContent>
-            <p class="text-sm text-muted-foreground">Nitro server engine with file-based API routing. Connect to any database — MongoDB, PostgreSQL, MySQL, or Supabase.</p>
+            <p class="text-sm text-muted-foreground">
+              Nitro server engine with file-based API routing. Connect to any database — MongoDB, PostgreSQL, MySQL, or Supabase.
+            </p>
           </CardContent>
         </Card>
       </div>
@@ -406,34 +477,47 @@ const industries = [
             <Icon name="i-lucide-user" class="size-3.5 mr-1" />
             About the Developer
           </Badge>
-          <h3 class="text-2xl font-bold mt-2">Adeel Jabbar</h3>
+          <h3 class="text-2xl font-bold mt-2">
+            Adeel Jabbar
+          </h3>
           <p class="text-muted-foreground mt-2 leading-relaxed">
             Full Stack Developer, Senior UI/UX Professional, and Graphics Designer with expertise in building
             enterprise-grade applications. Specializing in modern web technologies, high-performance systems,
             and premium user experiences.
           </p>
           <div class="flex flex-wrap gap-2 mt-4">
-            <Badge variant="secondary">Full Stack Development</Badge>
-            <Badge variant="secondary">UI/UX Design</Badge>
-            <Badge variant="secondary">Enterprise ERP/CRM</Badge>
-            <Badge variant="secondary">Cloud Architecture</Badge>
-            <Badge variant="secondary">Graphics Design</Badge>
+            <Badge variant="secondary">
+              Full Stack Development
+            </Badge>
+            <Badge variant="secondary">
+              UI/UX Design
+            </Badge>
+            <Badge variant="secondary">
+              Enterprise ERP/CRM
+            </Badge>
+            <Badge variant="secondary">
+              Cloud Architecture
+            </Badge>
+            <Badge variant="secondary">
+              Graphics Design
+            </Badge>
           </div>
-
         </div>
         <div class="flex items-center justify-center bg-muted/50 p-8 md:w-80">
           <div class="flex flex-col items-center gap-3 text-center">
             <div class="flex items-center justify-center rounded-full bg-primary/10 p-6">
               <Icon name="i-lucide-code-2" class="size-12 text-primary" />
             </div>
-            <p class="text-lg font-bold">AI Visual Pro</p>
-            <p class="text-sm text-muted-foreground">Building the future of business software</p>
+            <p class="text-lg font-bold">
+              AI Visual Pro
+            </p>
+            <p class="text-sm text-muted-foreground">
+              Building the future of business software
+            </p>
           </div>
         </div>
       </div>
     </Card>
-
-
 
     <!-- Footer -->
     <div class="text-center py-4 border-t">

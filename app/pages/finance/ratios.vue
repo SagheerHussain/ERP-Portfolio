@@ -74,22 +74,29 @@ const ratioCategories = [
 ]
 
 function formatValue(value: number, unit: string) {
-  if (unit === '$') return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value)
-  if (unit === '%') return `${value.toFixed(1)}%`
-  if (unit === 'x') return `${value.toFixed(2)}x`
-  if (unit === 'days') return `${value.toFixed(1)} days`
+  if (unit === '$')
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value)
+  if (unit === '%')
+    return `${value.toFixed(1)}%`
+  if (unit === 'x')
+    return `${value.toFixed(2)}x`
+  if (unit === 'days')
+    return `${value.toFixed(1)} days`
   return value.toString()
 }
 
 function getChangeColor(value: number, prior: number, good: string) {
   const change = value - prior
-  if (good === 'context') return 'text-muted-foreground'
-  if (good === 'higher') return change >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-destructive'
+  if (good === 'context')
+    return 'text-muted-foreground'
+  if (good === 'higher')
+    return change >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-destructive'
   return change <= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-destructive'
 }
 
 function getBenchmarkStatus(value: number, benchmark: number, good: string) {
-  if (good === 'context') return { label: 'Market', class: 'bg-muted text-muted-foreground' }
+  if (good === 'context')
+    return { label: 'Market', class: 'bg-muted text-muted-foreground' }
   if (good === 'higher') {
     return value >= benchmark
       ? { label: 'Above Avg', class: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800' }
@@ -137,9 +144,15 @@ setHeader({ title: 'Financial Ratios', icon: 'i-lucide-chart-no-axes-combined', 
           <SelectValue placeholder="Period" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="Q4 2025">Q4 2025</SelectItem>
-          <SelectItem value="Q3 2025">Q3 2025</SelectItem>
-          <SelectItem value="Q2 2025">Q2 2025</SelectItem>
+          <SelectItem value="Q4 2025">
+            Q4 2025
+          </SelectItem>
+          <SelectItem value="Q3 2025">
+            Q3 2025
+          </SelectItem>
+          <SelectItem value="Q2 2025">
+            Q2 2025
+          </SelectItem>
         </SelectContent>
       </Select>
       <Button variant="outline">
@@ -155,7 +168,9 @@ setHeader({ title: 'Financial Ratios', icon: 'i-lucide-chart-no-axes-combined', 
           <div class="text-2xl font-bold tabular-nums text-emerald-600 dark:text-emerald-400">
             <NumberFlow :value="38.4" suffix="%" />
           </div>
-          <p class="text-xs text-muted-foreground mt-1">ROE</p>
+          <p class="text-xs text-muted-foreground mt-1">
+            ROE
+          </p>
         </CardContent>
       </Card>
       <Card class="text-center">
@@ -163,7 +178,9 @@ setHeader({ title: 'Financial Ratios', icon: 'i-lucide-chart-no-axes-combined', 
           <div class="text-2xl font-bold tabular-nums text-blue-600 dark:text-blue-400">
             <NumberFlow :value="2.80" suffix="x" />
           </div>
-          <p class="text-xs text-muted-foreground mt-1">Current Ratio</p>
+          <p class="text-xs text-muted-foreground mt-1">
+            Current Ratio
+          </p>
         </CardContent>
       </Card>
       <Card class="text-center">
@@ -171,7 +188,9 @@ setHeader({ title: 'Financial Ratios', icon: 'i-lucide-chart-no-axes-combined', 
           <div class="text-2xl font-bold tabular-nums text-amber-600 dark:text-amber-400">
             <NumberFlow :value="0.51" suffix="x" />
           </div>
-          <p class="text-xs text-muted-foreground mt-1">D/E Ratio</p>
+          <p class="text-xs text-muted-foreground mt-1">
+            D/E Ratio
+          </p>
         </CardContent>
       </Card>
       <Card class="text-center">
@@ -179,7 +198,9 @@ setHeader({ title: 'Financial Ratios', icon: 'i-lucide-chart-no-axes-combined', 
           <div class="text-2xl font-bold tabular-nums text-violet-600 dark:text-violet-400">
             <NumberFlow :value="1.44" suffix="x" />
           </div>
-          <p class="text-xs text-muted-foreground mt-1">Asset Turnover</p>
+          <p class="text-xs text-muted-foreground mt-1">
+            Asset Turnover
+          </p>
         </CardContent>
       </Card>
       <Card class="text-center">
@@ -187,7 +208,9 @@ setHeader({ title: 'Financial Ratios', icon: 'i-lucide-chart-no-axes-combined', 
           <div class="text-2xl font-bold tabular-nums text-rose-600 dark:text-rose-400">
             <NumberFlow :value="22.5" suffix="x" />
           </div>
-          <p class="text-xs text-muted-foreground mt-1">P/E Ratio</p>
+          <p class="text-xs text-muted-foreground mt-1">
+            P/E Ratio
+          </p>
         </CardContent>
       </Card>
       <Card class="text-center">
@@ -195,7 +218,9 @@ setHeader({ title: 'Financial Ratios', icon: 'i-lucide-chart-no-axes-combined', 
           <div class="text-2xl font-bold tabular-nums text-cyan-600 dark:text-cyan-400">
             <NumberFlow :value="13.6" suffix="x" />
           </div>
-          <p class="text-xs text-muted-foreground mt-1">Interest Coverage</p>
+          <p class="text-xs text-muted-foreground mt-1">
+            Interest Coverage
+          </p>
         </CardContent>
       </Card>
     </div>
@@ -265,8 +290,12 @@ setHeader({ title: 'Financial Ratios', icon: 'i-lucide-chart-no-axes-combined', 
           <div class="divide-y">
             <div v-for="ratio in cat.ratios" :key="ratio.name" class="grid grid-cols-12 items-center px-6 py-3 hover:bg-muted/20 transition-colors">
               <div class="col-span-3">
-                <p class="text-sm font-medium">{{ ratio.name }}</p>
-                <p class="text-xs text-muted-foreground">{{ ratio.description }}</p>
+                <p class="text-sm font-medium">
+                  {{ ratio.name }}
+                </p>
+                <p class="text-xs text-muted-foreground">
+                  {{ ratio.description }}
+                </p>
               </div>
               <span class="text-sm font-semibold tabular-nums text-right col-span-2">{{ formatValue(ratio.value, ratio.unit) }}</span>
               <span class="text-sm text-muted-foreground tabular-nums text-right col-span-2">{{ formatValue(ratio.prior, ratio.unit) }}</span>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import NumberFlow from '@number-flow/vue'
-import { TrendingUp, TrendingDown } from 'lucide-vue-next'
+import { TrendingUp } from 'lucide-vue-next'
 
 const overallScore = ref(0)
 onMounted(() => { overallScore.value = 87 })
@@ -91,11 +91,16 @@ const statusColors: Record<string, string> = {
 }
 
 function getScoreGrade(score: number) {
-  if (score >= 90) return { grade: 'A+', color: 'text-emerald-500' }
-  if (score >= 85) return { grade: 'A', color: 'text-emerald-500' }
-  if (score >= 80) return { grade: 'B+', color: 'text-blue-500' }
-  if (score >= 75) return { grade: 'B', color: 'text-blue-500' }
-  if (score >= 70) return { grade: 'C+', color: 'text-amber-500' }
+  if (score >= 90)
+    return { grade: 'A+', color: 'text-emerald-500' }
+  if (score >= 85)
+    return { grade: 'A', color: 'text-emerald-500' }
+  if (score >= 80)
+    return { grade: 'B+', color: 'text-blue-500' }
+  if (score >= 75)
+    return { grade: 'B', color: 'text-blue-500' }
+  if (score >= 70)
+    return { grade: 'C+', color: 'text-amber-500' }
   return { grade: 'C', color: 'text-amber-500' }
 }
 
@@ -171,7 +176,8 @@ setHeader({ title: 'Business Health', icon: 'i-lucide-heart-pulse', description:
           <div class="relative flex items-center justify-center">
             <svg class="size-44 -rotate-90" viewBox="0 0 120 120">
               <circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-width="8" class="text-muted/20" />
-              <circle cx="60" cy="60" r="50" fill="none" stroke-width="8" stroke-linecap="round"
+              <circle
+                cx="60" cy="60" r="50" fill="none" stroke-width="8" stroke-linecap="round"
                 class="text-primary transition-all duration-1000 ease-out"
                 :stroke-dasharray="`${overallScore * 3.14} 314`"
               />
@@ -195,7 +201,9 @@ setHeader({ title: 'Business Health', icon: 'i-lucide-heart-pulse', description:
                 +9 pts YoY
               </Badge>
             </div>
-            <h3 class="text-xl font-bold mt-2">Your Business is in Excellent Health</h3>
+            <h3 class="text-xl font-bold mt-2">
+              Your Business is in Excellent Health
+            </h3>
             <p class="text-muted-foreground mt-1 max-w-xl leading-relaxed">
               Strong profitability, healthy leverage, and growing revenue demonstrate a well-managed business.
               Key areas like liquidity and debt management are well above industry benchmarks. Minor attention needed on operational efficiency.
@@ -220,7 +228,8 @@ setHeader({ title: 'Business Health', icon: 'i-lucide-heart-pulse', description:
           <div class="relative flex items-center justify-center my-2">
             <svg class="size-20 -rotate-90" viewBox="0 0 120 120">
               <circle cx="60" cy="60" r="50" fill="none" stroke="currentColor" stroke-width="10" class="text-muted/20" />
-              <circle cx="60" cy="60" r="50" fill="none" stroke-width="10" stroke-linecap="round"
+              <circle
+                cx="60" cy="60" r="50" fill="none" stroke-width="10" stroke-linecap="round"
                 :class="cat.ringColor"
                 class="transition-all duration-1000 ease-out"
                 :stroke-dasharray="`${cat.score * 3.14} 314`"
@@ -230,7 +239,9 @@ setHeader({ title: 'Business Health', icon: 'i-lucide-heart-pulse', description:
               <span class="text-xl font-bold tabular-nums">{{ cat.score }}</span>
             </div>
           </div>
-          <p class="text-sm font-semibold">{{ cat.title }}</p>
+          <p class="text-sm font-semibold">
+            {{ cat.title }}
+          </p>
           <Badge variant="outline" :class="getScoreGrade(cat.score).color" class="text-xs">
             {{ getScoreGrade(cat.score).grade }}
           </Badge>
@@ -292,7 +303,9 @@ setHeader({ title: 'Business Health', icon: 'i-lucide-heart-pulse', description:
             </div>
             <div class="flex items-center gap-2">
               <span class="text-2xl font-bold tabular-nums" :class="cat.color">{{ cat.score }}</span>
-              <Badge variant="outline" :class="getScoreGrade(cat.score).color">{{ getScoreGrade(cat.score).grade }}</Badge>
+              <Badge variant="outline" :class="getScoreGrade(cat.score).color">
+                {{ getScoreGrade(cat.score).grade }}
+              </Badge>
             </div>
           </div>
         </CardHeader>
@@ -300,8 +313,12 @@ setHeader({ title: 'Business Health', icon: 'i-lucide-heart-pulse', description:
           <div class="divide-y">
             <div v-for="ind in cat.indicators" :key="ind.name" class="flex items-center justify-between px-6 py-3 hover:bg-muted/20 transition-colors">
               <div class="flex-1">
-                <p class="text-sm font-medium">{{ ind.name }}</p>
-                <p class="text-xs text-muted-foreground">{{ ind.note }}</p>
+                <p class="text-sm font-medium">
+                  {{ ind.name }}
+                </p>
+                <p class="text-xs text-muted-foreground">
+                  {{ ind.note }}
+                </p>
               </div>
               <div class="flex items-center gap-3">
                 <span class="text-sm font-semibold tabular-nums">{{ ind.value }}</span>
@@ -336,8 +353,12 @@ setHeader({ title: 'Business Health', icon: 'i-lucide-heart-pulse', description:
               <Icon :name="s.icon" class="size-4 text-emerald-500" />
             </div>
             <div>
-              <p class="text-sm font-semibold">{{ s.title }}</p>
-              <p class="text-xs text-muted-foreground leading-relaxed mt-1">{{ s.description }}</p>
+              <p class="text-sm font-semibold">
+                {{ s.title }}
+              </p>
+              <p class="text-xs text-muted-foreground leading-relaxed mt-1">
+                {{ s.description }}
+              </p>
             </div>
           </div>
         </CardContent>
@@ -363,10 +384,16 @@ setHeader({ title: 'Business Health', icon: 'i-lucide-heart-pulse', description:
             </div>
             <div class="flex-1">
               <div class="flex items-center gap-2">
-                <p class="text-sm font-semibold">{{ r.title }}</p>
-                <Badge variant="outline" class="text-xs capitalize" :class="sevColors[r.severity]">{{ r.severity }}</Badge>
+                <p class="text-sm font-semibold">
+                  {{ r.title }}
+                </p>
+                <Badge variant="outline" class="text-xs capitalize" :class="sevColors[r.severity]">
+                  {{ r.severity }}
+                </Badge>
               </div>
-              <p class="text-xs text-muted-foreground leading-relaxed mt-1">{{ r.description }}</p>
+              <p class="text-xs text-muted-foreground leading-relaxed mt-1">
+                {{ r.description }}
+              </p>
             </div>
           </div>
         </CardContent>
@@ -391,10 +418,16 @@ setHeader({ title: 'Business Health', icon: 'i-lucide-heart-pulse', description:
           <div v-for="action in actions" :key="action.title" class="flex flex-col md:flex-row md:items-center justify-between gap-3 px-6 py-4 hover:bg-muted/20 transition-colors">
             <div class="flex-1">
               <div class="flex items-center gap-2 flex-wrap">
-                <p class="text-sm font-semibold">{{ action.title }}</p>
-                <Badge variant="outline" class="text-xs" :class="priorityColors[action.priority]">{{ action.priority }}</Badge>
+                <p class="text-sm font-semibold">
+                  {{ action.title }}
+                </p>
+                <Badge variant="outline" class="text-xs" :class="priorityColors[action.priority]">
+                  {{ action.priority }}
+                </Badge>
               </div>
-              <p class="text-xs text-muted-foreground leading-relaxed mt-1">{{ action.description }}</p>
+              <p class="text-xs text-muted-foreground leading-relaxed mt-1">
+                {{ action.description }}
+              </p>
             </div>
             <div class="flex items-center gap-4 shrink-0 text-xs text-muted-foreground">
               <div class="flex items-center gap-1">

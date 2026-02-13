@@ -294,10 +294,14 @@ const OPTIONS: UseTimeAgoOptions<false, UseTimeAgoUnitNamesDefault> = {
                         </PopoverTrigger>
                         <PopoverContent class="w-72 p-0" align="start" @click.stop>
                           <div class="px-3 py-2 border-b">
-                            <p class="text-sm font-semibold">Subtasks</p>
+                            <p class="text-sm font-semibold">
+                              Subtasks
+                            </p>
                           </div>
                           <div class="max-h-48 overflow-y-auto">
-                            <div v-if="!t.subtasks?.length" class="px-3 py-4 text-sm text-muted-foreground text-center">No subtasks yet</div>
+                            <div v-if="!t.subtasks?.length" class="px-3 py-4 text-sm text-muted-foreground text-center">
+                              No subtasks yet
+                            </div>
                             <div v-for="st in t.subtasks" :key="st.id" class="flex items-center gap-2 px-3 py-1.5 hover:bg-accent/50 group">
                               <Checkbox :checked="st.completed" @update:checked="toggleSubtask(col.id, t.id, st.id)" />
                               <span class="text-sm flex-1" :class="st.completed ? 'line-through text-muted-foreground' : ''">{{ st.title }}</span>
@@ -327,16 +331,22 @@ const OPTIONS: UseTimeAgoOptions<false, UseTimeAgoUnitNamesDefault> = {
                         </PopoverTrigger>
                         <PopoverContent class="w-80 p-0" align="start" @click.stop>
                           <div class="px-3 py-2 border-b">
-                            <p class="text-sm font-semibold">Comments</p>
+                            <p class="text-sm font-semibold">
+                              Comments
+                            </p>
                           </div>
                           <div class="max-h-56 overflow-y-auto">
-                            <div v-if="!t.comments?.length" class="px-3 py-4 text-sm text-muted-foreground text-center">No comments yet</div>
+                            <div v-if="!t.comments?.length" class="px-3 py-4 text-sm text-muted-foreground text-center">
+                              No comments yet
+                            </div>
                             <div v-for="cm in t.comments" :key="cm.id" class="px-3 py-2 border-b last:border-b-0 group">
                               <div class="flex items-center justify-between gap-2">
                                 <div class="flex items-center gap-2">
                                   <Avatar class="size-5">
                                     <AvatarImage :src="cm.avatar || ''" :alt="cm.author" />
-                                    <AvatarFallback class="text-[8px]">{{ cm.author?.slice(0, 2).toUpperCase() }}</AvatarFallback>
+                                    <AvatarFallback class="text-[8px]">
+                                      {{ cm.author?.slice(0, 2).toUpperCase() }}
+                                    </AvatarFallback>
                                   </Avatar>
                                   <span class="text-xs font-medium">{{ cm.author }}</span>
                                 </div>
@@ -347,7 +357,9 @@ const OPTIONS: UseTimeAgoOptions<false, UseTimeAgoUnitNamesDefault> = {
                                   </button>
                                 </div>
                               </div>
-                              <p class="text-xs text-muted-foreground mt-1 leading-relaxed">{{ cm.text }}</p>
+                              <p class="text-xs text-muted-foreground mt-1 leading-relaxed">
+                                {{ cm.text }}
+                              </p>
                             </div>
                           </div>
                           <div class="border-t px-2 py-2">
@@ -379,7 +391,9 @@ const OPTIONS: UseTimeAgoOptions<false, UseTimeAgoUnitNamesDefault> = {
                         <TooltipTrigger as-child>
                           <Avatar class="size-6">
                             <AvatarImage :src="t.assignee.avatar || '/avatars/avatartion.png'" :alt="t.assignee.name" />
-                            <AvatarFallback class="text-[10px]">{{ t.assignee.name?.slice(0, 2).toUpperCase() }}</AvatarFallback>
+                            <AvatarFallback class="text-[10px]">
+                              {{ t.assignee.name?.slice(0, 2).toUpperCase() }}
+                            </AvatarFallback>
                           </Avatar>
                         </TooltipTrigger>
                         <TooltipContent>{{ t.assignee.name }}</TooltipContent>

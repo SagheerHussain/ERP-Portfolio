@@ -8,6 +8,6 @@ export default defineAppConfig({
     theme: {
       color: 'default', // 'default' | 'blue' | 'green' | 'orange' | 'purple' | 'red' | 'teal' | 'yellow' | 'rose'
       type: 'scaled', // 'default' | 'mono' | 'scaled'
-    }
+    },
   },
 })

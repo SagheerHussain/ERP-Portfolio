@@ -15,8 +15,11 @@ const formFields = [
   { key: 'amount', label: 'Total ($)', type: 'number' as const, placeholder: '15000' },
   { key: 'paidAmount', label: 'Paid ($)', type: 'number' as const, placeholder: '15000' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Draft', value: 'Draft' }, { label: 'Sent', value: 'Sent' },
-    { label: 'Paid', value: 'Paid' }, { label: 'Overdue', value: 'Overdue' }, { label: 'Cancelled', value: 'Cancelled' },
+    { label: 'Draft', value: 'Draft' },
+    { label: 'Sent', value: 'Sent' },
+    { label: 'Paid', value: 'Paid' },
+    { label: 'Overdue', value: 'Overdue' },
+    { label: 'Cancelled', value: 'Cancelled' },
   ] },
   { key: 'issuedDate', label: 'Issue Date', type: 'date' as const },
   { key: 'dueDate', label: 'Due Date', type: 'date' as const },

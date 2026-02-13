@@ -11,17 +11,23 @@ const columns = [
 const formFields = [
   { key: 'employee', label: 'Employee', placeholder: 'Sarah Johnson' },
   { key: 'category', label: 'Category', type: 'select' as const, options: [
-    { label: 'Travel', value: 'Travel' }, { label: 'Meals', value: 'Meals' },
-    { label: 'Office Supplies', value: 'Office Supplies' }, { label: 'Software', value: 'Software' },
-    { label: 'Equipment', value: 'Equipment' }, { label: 'Training', value: 'Training' },
-    { label: 'Client Entertainment', value: 'Client Entertainment' }, { label: 'Mileage', value: 'Mileage' },
+    { label: 'Travel', value: 'Travel' },
+    { label: 'Meals', value: 'Meals' },
+    { label: 'Office Supplies', value: 'Office Supplies' },
+    { label: 'Software', value: 'Software' },
+    { label: 'Equipment', value: 'Equipment' },
+    { label: 'Training', value: 'Training' },
+    { label: 'Client Entertainment', value: 'Client Entertainment' },
+    { label: 'Mileage', value: 'Mileage' },
   ] },
   { key: 'description', label: 'Description', placeholder: 'Business dinner with client' },
   { key: 'amount', label: 'Amount ($)', type: 'number' as const, placeholder: '250' },
   { key: 'date', label: 'Date', type: 'date' as const },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Pending', value: 'Pending' }, { label: 'Approved', value: 'Approved' },
-    { label: 'Rejected', value: 'Rejected' }, { label: 'Paid', value: 'Paid' },
+    { label: 'Pending', value: 'Pending' },
+    { label: 'Approved', value: 'Approved' },
+    { label: 'Rejected', value: 'Rejected' },
+    { label: 'Paid', value: 'Paid' },
   ] },
 ]
 

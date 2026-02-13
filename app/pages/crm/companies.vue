@@ -12,14 +12,20 @@ const columns = [
 const formFields = [
   { key: 'name', label: 'Company Name', placeholder: 'Acme Corp' },
   { key: 'industry', label: 'Industry', type: 'select' as const, options: [
-    { label: 'Technology', value: 'Technology' }, { label: 'Healthcare', value: 'Healthcare' },
-    { label: 'Finance', value: 'Finance' }, { label: 'Manufacturing', value: 'Manufacturing' },
-    { label: 'Retail', value: 'Retail' }, { label: 'Education', value: 'Education' },
-    { label: 'Consulting', value: 'Consulting' }, { label: 'Energy', value: 'Energy' },
+    { label: 'Technology', value: 'Technology' },
+    { label: 'Healthcare', value: 'Healthcare' },
+    { label: 'Finance', value: 'Finance' },
+    { label: 'Manufacturing', value: 'Manufacturing' },
+    { label: 'Retail', value: 'Retail' },
+    { label: 'Education', value: 'Education' },
+    { label: 'Consulting', value: 'Consulting' },
+    { label: 'Energy', value: 'Energy' },
   ] },
   { key: 'size', label: 'Company Size', type: 'select' as const, options: [
-    { label: '1-10', value: '1-10' }, { label: '11-50', value: '11-50' },
-    { label: '51-200', value: '51-200' }, { label: '201-1000', value: '201-1000' },
+    { label: '1-10', value: '1-10' },
+    { label: '11-50', value: '11-50' },
+    { label: '51-200', value: '51-200' },
+    { label: '201-1000', value: '201-1000' },
     { label: '1000+', value: '1000+' },
   ] },
   { key: 'revenue', label: 'Annual Revenue ($)', type: 'number' as const, placeholder: '5000000' },
@@ -27,7 +33,9 @@ const formFields = [
   { key: 'employees', label: 'Employees', type: 'number' as const, placeholder: '250' },
   { key: 'website', label: 'Website', type: 'url' as const, placeholder: 'https://example.com' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Active', value: 'Active' }, { label: 'Inactive', value: 'Inactive' }, { label: 'Prospect', value: 'Prospect' },
+    { label: 'Active', value: 'Active' },
+    { label: 'Inactive', value: 'Inactive' },
+    { label: 'Prospect', value: 'Prospect' },
   ] },
 ]
 

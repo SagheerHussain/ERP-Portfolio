@@ -17,8 +17,10 @@ const formFields = [
   { key: 'hours', label: 'Total Hours', placeholder: '8.5' },
   { key: 'overtime', label: 'Overtime Hours', placeholder: '0.5' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Present', value: 'Present' }, { label: 'Late', value: 'Late' },
-    { label: 'Absent', value: 'Absent' }, { label: 'On Leave', value: 'On Leave' },
+    { label: 'Present', value: 'Present' },
+    { label: 'Late', value: 'Late' },
+    { label: 'Absent', value: 'Absent' },
+    { label: 'On Leave', value: 'On Leave' },
   ] },
 ]
 

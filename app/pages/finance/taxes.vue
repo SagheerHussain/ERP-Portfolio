@@ -12,8 +12,10 @@ const columns = [
 const formFields = [
   { key: 'jurisdiction', label: 'Jurisdiction', placeholder: 'Federal' },
   { key: 'taxType', label: 'Tax Type', type: 'select' as const, options: [
-    { label: 'Income Tax', value: 'Income Tax' }, { label: 'Sales Tax', value: 'Sales Tax' },
-    { label: 'Payroll Tax', value: 'Payroll Tax' }, { label: 'Property Tax', value: 'Property Tax' },
+    { label: 'Income Tax', value: 'Income Tax' },
+    { label: 'Sales Tax', value: 'Sales Tax' },
+    { label: 'Payroll Tax', value: 'Payroll Tax' },
+    { label: 'Property Tax', value: 'Property Tax' },
     { label: 'VAT', value: 'VAT' },
   ] },
   { key: 'rate', label: 'Rate', placeholder: '21%' },
@@ -21,8 +23,10 @@ const formFields = [
   { key: 'period', label: 'Period', placeholder: 'Q1 2026' },
   { key: 'dueDate', label: 'Due Date', type: 'date' as const },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Pending', value: 'Pending' }, { label: 'Paid', value: 'Paid' },
-    { label: 'Overdue', value: 'Overdue' }, { label: 'Draft', value: 'Draft' },
+    { label: 'Pending', value: 'Pending' },
+    { label: 'Paid', value: 'Paid' },
+    { label: 'Overdue', value: 'Overdue' },
+    { label: 'Draft', value: 'Draft' },
   ] },
 ]
 

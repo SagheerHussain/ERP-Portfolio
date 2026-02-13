@@ -15,11 +15,14 @@ const formFields = [
   { key: 'date', label: 'Date', type: 'date' as const },
   { key: 'hours', label: 'Hours', type: 'number' as const, placeholder: '8' },
   { key: 'billable', label: 'Billable', type: 'select' as const, options: [
-    { label: 'Billable', value: 'Billable' }, { label: 'Non-Billable', value: 'Non-Billable' },
+    { label: 'Billable', value: 'Billable' },
+    { label: 'Non-Billable', value: 'Non-Billable' },
   ] },
   { key: 'rate', label: 'Hourly Rate ($)', type: 'number' as const, placeholder: '150' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Pending', value: 'Pending' }, { label: 'Approved', value: 'Approved' }, { label: 'Rejected', value: 'Rejected' },
+    { label: 'Pending', value: 'Pending' },
+    { label: 'Approved', value: 'Approved' },
+    { label: 'Rejected', value: 'Rejected' },
   ] },
   { key: 'task', label: 'Task Description', type: 'textarea' as const, placeholder: 'What did you work on?' },
 ]

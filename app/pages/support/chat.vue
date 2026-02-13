@@ -16,8 +16,10 @@ const formFields = [
   { key: 'subject', label: 'Subject', placeholder: 'Pricing inquiry' },
   { key: 'agent', label: 'Agent', placeholder: 'Thomas Wright' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Active', value: 'Active' }, { label: 'Pending', value: 'Pending' },
-    { label: 'Resolved', value: 'Resolved' }, { label: 'Closed', value: 'Closed' },
+    { label: 'Active', value: 'Active' },
+    { label: 'Pending', value: 'Pending' },
+    { label: 'Resolved', value: 'Resolved' },
+    { label: 'Closed', value: 'Closed' },
   ] },
 ]
 

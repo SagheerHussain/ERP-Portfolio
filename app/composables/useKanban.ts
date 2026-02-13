@@ -1,5 +1,5 @@
+import type { BoardState, Column, NewTask, Task } from '~/types/kanban'
 import { nanoid } from 'nanoid'
-import type { BoardState, Column, Comment, NewTask, Subtask, Task } from '~/types/kanban'
 
 const isClient = import.meta.client
 
@@ -528,23 +528,28 @@ export function useKanban() {
   // ── Subtask CRUD ──
   function addSubtask(columnId: string, taskId: string, title: string) {
     const task = findTask(board.value, columnId, taskId)
-    if (!task) return
-    if (!task.subtasks) task.subtasks = []
+    if (!task)
+      return
+    if (!task.subtasks)
+      task.subtasks = []
     task.subtasks.push({ id: nanoid(8), title, completed: false })
     persist()
   }
 
   function toggleSubtask(columnId: string, taskId: string, subtaskId: string) {
     const task = findTask(board.value, columnId, taskId)
-    if (!task?.subtasks) return
+    if (!task?.subtasks)
+      return
     const st = task.subtasks.find(s => s.id === subtaskId)
-    if (st) st.completed = !st.completed
+    if (st)
+      st.completed = !st.completed
     persist()
   }
 
   function removeSubtask(columnId: string, taskId: string, subtaskId: string) {
     const task = findTask(board.value, columnId, taskId)
-    if (!task?.subtasks) return
+    if (!task?.subtasks)
+      return
     task.subtasks = task.subtasks.filter(s => s.id !== subtaskId)
     persist()
   }
@@ -552,8 +557,10 @@ export function useKanban() {
   // ── Comment CRUD ──
   function addComment(columnId: string, taskId: string, text: string) {
     const task = findTask(board.value, columnId, taskId)
-    if (!task) return
-    if (!task.comments) task.comments = []
+    if (!task)
+      return
+    if (!task.comments)
+      task.comments = []
     task.comments.push({
       id: nanoid(8),
       author: 'Adeel Jabbar',
@@ -566,17 +573,26 @@ export function useKanban() {
 
   function removeComment(columnId: string, taskId: string, commentId: string) {
     const task = findTask(board.value, columnId, taskId)
-    if (!task?.comments) return
+    if (!task?.comments)
+      return
     task.comments = task.comments.filter(c => c.id !== commentId)
     persist()
   }
 
   return {
     board,
-    addColumn, removeColumn, updateColumn,
-    addTask, updateTask, removeTask,
-    setColumns, persist,
-    addSubtask, toggleSubtask, removeSubtask,
-    addComment, removeComment,
+    addColumn,
+    removeColumn,
+    updateColumn,
+    addTask,
+    updateTask,
+    removeTask,
+    setColumns,
+    persist,
+    addSubtask,
+    toggleSubtask,
+    removeSubtask,
+    addComment,
+    removeComment,
   }
 }

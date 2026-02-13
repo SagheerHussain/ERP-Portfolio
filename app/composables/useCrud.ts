@@ -10,7 +10,7 @@ export interface CrudFormField {
   key: string
   label: string
   type?: 'text' | 'email' | 'number' | 'select' | 'date' | 'textarea' | 'url'
-  options?: { label: string; value: string }[]
+  options?: { label: string, value: string }[]
   required?: boolean
   placeholder?: string
 }
@@ -20,7 +20,8 @@ export function useCrud<T extends Record<string, any>>(storeKey: string, initial
   const isLoaded = ref(false)
 
   function load() {
-    if (import.meta.server) return
+    if (import.meta.server)
+      return
     try {
       const stored = localStorage.getItem(`fsc_${storeKey}`)
       if (stored) {
@@ -38,7 +39,8 @@ export function useCrud<T extends Record<string, any>>(storeKey: string, initial
   }
 
   function save() {
-    if (import.meta.server) return
+    if (import.meta.server)
+      return
     try {
       localStorage.setItem(`fsc_${storeKey}`, JSON.stringify(items.value))
     }

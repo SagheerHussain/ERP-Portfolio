@@ -12,15 +12,20 @@ const columns = [
 const formFields = [
   { key: 'name', label: 'Email Name', placeholder: 'February Newsletter' },
   { key: 'list', label: 'Recipient List', type: 'select' as const, options: [
-    { label: 'All Subscribers', value: 'All Subscribers' }, { label: 'Enterprise', value: 'Enterprise' },
-    { label: 'Free Trial', value: 'Free Trial' }, { label: 'Inactive Users', value: 'Inactive Users' },
-    { label: 'Newsletter', value: 'Newsletter' }, { label: 'Product Updates', value: 'Product Updates' },
+    { label: 'All Subscribers', value: 'All Subscribers' },
+    { label: 'Enterprise', value: 'Enterprise' },
+    { label: 'Free Trial', value: 'Free Trial' },
+    { label: 'Inactive Users', value: 'Inactive Users' },
+    { label: 'Newsletter', value: 'Newsletter' },
+    { label: 'Product Updates', value: 'Product Updates' },
   ] },
   { key: 'sent', label: 'Recipients', type: 'number' as const, placeholder: '5000' },
   { key: 'subject', label: 'Subject Line', placeholder: 'Your February update is here!' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Draft', value: 'Draft' }, { label: 'Scheduled', value: 'Scheduled' },
-    { label: 'Sent', value: 'Sent' }, { label: 'Cancelled', value: 'Cancelled' },
+    { label: 'Draft', value: 'Draft' },
+    { label: 'Scheduled', value: 'Scheduled' },
+    { label: 'Sent', value: 'Sent' },
+    { label: 'Cancelled', value: 'Cancelled' },
   ] },
   { key: 'date', label: 'Send Date', type: 'date' as const },
 ]

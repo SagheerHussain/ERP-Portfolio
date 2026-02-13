@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import NumberFlow from '@number-flow/vue'
-import { TrendingUp, TrendingDown } from 'lucide-vue-next'
+import { TrendingDown, TrendingUp } from 'lucide-vue-next'
 
 const period = ref('Q4 2025')
 
@@ -69,11 +69,12 @@ function fmt(n: number) {
 }
 
 function pctChange(current: number, prior: number) {
-  if (prior === 0) return 0
+  if (prior === 0)
+    return 0
   return ((current - prior) / Math.abs(prior) * 100)
 }
 
-const compositionData = [
+const _compositionData = [
   { name: 'Current Assets', value: 5805000 },
   { name: 'Non-Current Assets', value: 7045000 },
 ]
@@ -108,10 +109,18 @@ setHeader({ title: 'Balance Sheet', icon: 'i-lucide-landmark', description: 'Con
           <SelectValue placeholder="Period" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="Q4 2025">Q4 2025</SelectItem>
-          <SelectItem value="Q3 2025">Q3 2025</SelectItem>
-          <SelectItem value="Q2 2025">Q2 2025</SelectItem>
-          <SelectItem value="Q1 2025">Q1 2025</SelectItem>
+          <SelectItem value="Q4 2025">
+            Q4 2025
+          </SelectItem>
+          <SelectItem value="Q3 2025">
+            Q3 2025
+          </SelectItem>
+          <SelectItem value="Q2 2025">
+            Q2 2025
+          </SelectItem>
+          <SelectItem value="Q1 2025">
+            Q1 2025
+          </SelectItem>
         </SelectContent>
       </Select>
       <Button variant="outline">
@@ -136,8 +145,12 @@ setHeader({ title: 'Balance Sheet', icon: 'i-lucide-landmark', description: 'Con
           </CardAction>
         </CardHeader>
         <CardFooter class="flex-col items-start gap-1 text-sm">
-          <div class="flex gap-2 font-medium">Year-over-year growth <TrendingUp class="size-4 text-emerald-500" /></div>
-          <div class="text-muted-foreground">vs. $11.9M in Q4 2024</div>
+          <div class="flex gap-2 font-medium">
+            Year-over-year growth <TrendingUp class="size-4 text-emerald-500" />
+          </div>
+          <div class="text-muted-foreground">
+            vs. $11.9M in Q4 2024
+          </div>
         </CardFooter>
       </Card>
 
@@ -155,8 +168,12 @@ setHeader({ title: 'Balance Sheet', icon: 'i-lucide-landmark', description: 'Con
           </CardAction>
         </CardHeader>
         <CardFooter class="flex-col items-start gap-1 text-sm">
-          <div class="flex gap-2 font-medium">Declining steadily <TrendingDown class="size-4 text-emerald-500" /></div>
-          <div class="text-muted-foreground">Reduced by $80K from Q4 2024</div>
+          <div class="flex gap-2 font-medium">
+            Declining steadily <TrendingDown class="size-4 text-emerald-500" />
+          </div>
+          <div class="text-muted-foreground">
+            Reduced by $80K from Q4 2024
+          </div>
         </CardFooter>
       </Card>
 
@@ -174,8 +191,12 @@ setHeader({ title: 'Balance Sheet', icon: 'i-lucide-landmark', description: 'Con
           </CardAction>
         </CardHeader>
         <CardFooter class="flex-col items-start gap-1 text-sm">
-          <div class="flex gap-2 font-medium">Strong equity growth <TrendingUp class="size-4 text-emerald-500" /></div>
-          <div class="text-muted-foreground">Equity ratio: 66.3%</div>
+          <div class="flex gap-2 font-medium">
+            Strong equity growth <TrendingUp class="size-4 text-emerald-500" />
+          </div>
+          <div class="text-muted-foreground">
+            Equity ratio: 66.3%
+          </div>
         </CardFooter>
       </Card>
 
@@ -193,8 +214,12 @@ setHeader({ title: 'Balance Sheet', icon: 'i-lucide-landmark', description: 'Con
           </CardAction>
         </CardHeader>
         <CardFooter class="flex-col items-start gap-1 text-sm">
-          <div class="flex gap-2 font-medium">Below 1.0 — well-leveraged <TrendingDown class="size-4 text-emerald-500" /></div>
-          <div class="text-muted-foreground">Industry avg: 0.85</div>
+          <div class="flex gap-2 font-medium">
+            Below 1.0 — well-leveraged <TrendingDown class="size-4 text-emerald-500" />
+          </div>
+          <div class="text-muted-foreground">
+            Industry avg: 0.85
+          </div>
         </CardFooter>
       </Card>
     </div>
@@ -254,7 +279,9 @@ setHeader({ title: 'Balance Sheet', icon: 'i-lucide-landmark', description: 'Con
         <CardContent class="p-0">
           <!-- Current Assets -->
           <div class="px-6 py-3 bg-muted/30 border-y">
-            <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Current Assets</h4>
+            <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+              Current Assets
+            </h4>
           </div>
           <div class="divide-y">
             <div v-for="item in currentAssets" :key="item.name" class="flex items-center justify-between px-6 py-3 hover:bg-muted/20 transition-colors">
@@ -274,7 +301,9 @@ setHeader({ title: 'Balance Sheet', icon: 'i-lucide-landmark', description: 'Con
 
           <!-- Non-Current Assets -->
           <div class="px-6 py-3 bg-muted/30 border-y">
-            <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Non-Current Assets</h4>
+            <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+              Non-Current Assets
+            </h4>
           </div>
           <div class="divide-y">
             <div v-for="item in nonCurrentAssets" :key="item.name" class="flex items-center justify-between px-6 py-3 hover:bg-muted/20 transition-colors">
@@ -316,7 +345,9 @@ setHeader({ title: 'Balance Sheet', icon: 'i-lucide-landmark', description: 'Con
         <CardContent class="p-0">
           <!-- Current Liabilities -->
           <div class="px-6 py-3 bg-muted/30 border-y">
-            <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Current Liabilities</h4>
+            <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+              Current Liabilities
+            </h4>
           </div>
           <div class="divide-y">
             <div v-for="item in currentLiabilities" :key="item.name" class="flex items-center justify-between px-6 py-3 hover:bg-muted/20 transition-colors">
@@ -336,7 +367,9 @@ setHeader({ title: 'Balance Sheet', icon: 'i-lucide-landmark', description: 'Con
 
           <!-- Non-Current Liabilities -->
           <div class="px-6 py-3 bg-muted/30 border-y">
-            <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Non-Current Liabilities</h4>
+            <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+              Non-Current Liabilities
+            </h4>
           </div>
           <div class="divide-y">
             <div v-for="item in nonCurrentLiabilities" :key="item.name" class="flex items-center justify-between px-6 py-3 hover:bg-muted/20 transition-colors">
@@ -356,7 +389,9 @@ setHeader({ title: 'Balance Sheet', icon: 'i-lucide-landmark', description: 'Con
 
           <!-- Equity -->
           <div class="px-6 py-3 bg-muted/30 border-y">
-            <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Shareholders' Equity</h4>
+            <h4 class="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+              Shareholders' Equity
+            </h4>
           </div>
           <div class="divide-y">
             <div v-for="item in equity" :key="item.name" class="flex items-center justify-between px-6 py-3 hover:bg-muted/20 transition-colors">

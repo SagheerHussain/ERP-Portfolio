@@ -10,15 +10,20 @@ const columns = [
 
 const formFields = [
   { key: 'type', label: 'Activity Type', type: 'select' as const, options: [
-    { label: 'Call', value: 'Call' }, { label: 'Email', value: 'Email' },
-    { label: 'Meeting', value: 'Meeting' }, { label: 'Note', value: 'Note' }, { label: 'Task', value: 'Task' },
+    { label: 'Call', value: 'Call' },
+    { label: 'Email', value: 'Email' },
+    { label: 'Meeting', value: 'Meeting' },
+    { label: 'Note', value: 'Note' },
+    { label: 'Task', value: 'Task' },
   ] },
   { key: 'subject', label: 'Subject', placeholder: 'Follow-up call with client' },
   { key: 'contact', label: 'Contact', placeholder: 'Jane Smith' },
   { key: 'assignee', label: 'Assignee', placeholder: 'John Doe' },
   { key: 'date', label: 'Date', type: 'date' as const },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Completed', value: 'Completed' }, { label: 'Pending', value: 'Pending' }, { label: 'Overdue', value: 'Overdue' },
+    { label: 'Completed', value: 'Completed' },
+    { label: 'Pending', value: 'Pending' },
+    { label: 'Overdue', value: 'Overdue' },
   ] },
   { key: 'notes', label: 'Notes', type: 'textarea' as const, placeholder: 'Activity notes...' },
 ]

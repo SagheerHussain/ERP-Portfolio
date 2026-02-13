@@ -12,13 +12,18 @@ const columns = [
 const formFields = [
   { key: 'title', label: 'Article Title', placeholder: 'Getting Started Guide' },
   { key: 'category', label: 'Category', type: 'select' as const, options: [
-    { label: 'Getting Started', value: 'Getting Started' }, { label: 'Account', value: 'Account' },
-    { label: 'Billing', value: 'Billing' }, { label: 'API', value: 'API' },
-    { label: 'Integrations', value: 'Integrations' }, { label: 'Troubleshooting', value: 'Troubleshooting' },
+    { label: 'Getting Started', value: 'Getting Started' },
+    { label: 'Account', value: 'Account' },
+    { label: 'Billing', value: 'Billing' },
+    { label: 'API', value: 'API' },
+    { label: 'Integrations', value: 'Integrations' },
+    { label: 'Troubleshooting', value: 'Troubleshooting' },
   ] },
   { key: 'author', label: 'Author', placeholder: 'Thomas Wright' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Published', value: 'Published' }, { label: 'Draft', value: 'Draft' }, { label: 'Under Review', value: 'Under Review' },
+    { label: 'Published', value: 'Published' },
+    { label: 'Draft', value: 'Draft' },
+    { label: 'Under Review', value: 'Under Review' },
   ] },
   { key: 'content', label: 'Content', type: 'textarea' as const, placeholder: 'Article content...' },
 ]

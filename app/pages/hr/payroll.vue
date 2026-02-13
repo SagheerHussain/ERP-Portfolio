@@ -17,8 +17,10 @@ const formFields = [
   { key: 'bonus', label: 'Bonus ($)', type: 'number' as const, placeholder: '500' },
   { key: 'netPay', label: 'Net Pay ($)', type: 'number' as const, placeholder: '6900' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Draft', value: 'Draft' }, { label: 'Processed', value: 'Processed' },
-    { label: 'Paid', value: 'Paid' }, { label: 'On Hold', value: 'On Hold' },
+    { label: 'Draft', value: 'Draft' },
+    { label: 'Processed', value: 'Processed' },
+    { label: 'Paid', value: 'Paid' },
+    { label: 'On Hold', value: 'On Hold' },
   ] },
 ]
 

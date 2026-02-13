@@ -9,7 +9,8 @@ watch(() => route.fullPath, () => {
 
 // Derive fallback title from route when no explicit title is set
 const fallbackTitle = computed(() => {
-  if (route.fullPath === '/') return 'Dashboard'
+  if (route.fullPath === '/')
+    return 'Dashboard'
   const segments = route.fullPath.split('/').filter(s => s !== '')
   const last = segments[segments.length - 1] || ''
   return last
@@ -30,8 +31,12 @@ const displayTitle = computed(() => headerState.title || fallbackTitle.value)
       <div class="flex items-center gap-2.5 min-w-0">
         <Icon v-if="headerState.icon" :name="headerState.icon" class="size-5 shrink-0 text-primary" />
         <div class="min-w-0">
-          <h1 class="text-sm font-semibold leading-tight truncate">{{ displayTitle }}</h1>
-          <p v-if="headerState.description" class="text-xs text-muted-foreground leading-tight truncate hidden md:block">{{ headerState.description }}</p>
+          <h1 class="text-sm font-semibold leading-tight truncate">
+            {{ displayTitle }}
+          </h1>
+          <p v-if="headerState.description" class="text-xs text-muted-foreground leading-tight truncate hidden md:block">
+            {{ headerState.description }}
+          </p>
         </div>
       </div>
     </div>

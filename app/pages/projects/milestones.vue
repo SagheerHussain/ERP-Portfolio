@@ -13,8 +13,10 @@ const formFields = [
   { key: 'project', label: 'Project', placeholder: 'Enterprise Cloud Migration' },
   { key: 'progress', label: 'Progress (%)', type: 'number' as const, placeholder: '50' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'On Track', value: 'On Track' }, { label: 'At Risk', value: 'At Risk' },
-    { label: 'Completed', value: 'Completed' }, { label: 'Overdue', value: 'Overdue' },
+    { label: 'On Track', value: 'On Track' },
+    { label: 'At Risk', value: 'At Risk' },
+    { label: 'Completed', value: 'Completed' },
+    { label: 'Overdue', value: 'Overdue' },
   ] },
   { key: 'dueDate', label: 'Due Date', type: 'date' as const },
   { key: 'owner', label: 'Owner', placeholder: 'Sarah Johnson' },

@@ -30,6 +30,12 @@ export const navMenu: NavMenu[] = [
         link: '/kanban',
         new: true,
       },
+      {
+        title: 'Gantt Chart',
+        icon: 'i-lucide-gantt-chart',
+        link: '/gantt',
+        new: true,
+      },
     ],
   },
   {

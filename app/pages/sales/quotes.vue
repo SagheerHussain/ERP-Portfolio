@@ -15,8 +15,11 @@ const formFields = [
   { key: 'amount', label: 'Total Amount ($)', type: 'number' as const, placeholder: '15000' },
   { key: 'items', label: 'Line Items', type: 'number' as const, placeholder: '5' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Draft', value: 'Draft' }, { label: 'Sent', value: 'Sent' },
-    { label: 'Accepted', value: 'Accepted' }, { label: 'Rejected', value: 'Rejected' }, { label: 'Expired', value: 'Expired' },
+    { label: 'Draft', value: 'Draft' },
+    { label: 'Sent', value: 'Sent' },
+    { label: 'Accepted', value: 'Accepted' },
+    { label: 'Rejected', value: 'Rejected' },
+    { label: 'Expired', value: 'Expired' },
   ] },
   { key: 'date', label: 'Quote Date', type: 'date' as const },
   { key: 'validUntil', label: 'Valid Until', type: 'date' as const },

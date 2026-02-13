@@ -17,7 +17,9 @@ const formFields = [
   { key: 'totalSpent', label: 'Lifetime Value ($)', type: 'number' as const, placeholder: '5000' },
   { key: 'orders', label: 'Total Orders', type: 'number' as const, placeholder: '10' },
   { key: 'status', label: 'Status', type: 'select' as const, options: [
-    { label: 'Active', value: 'Active' }, { label: 'Inactive', value: 'Inactive' }, { label: 'VIP', value: 'VIP' },
+    { label: 'Active', value: 'Active' },
+    { label: 'Inactive', value: 'Inactive' },
+    { label: 'VIP', value: 'VIP' },
   ] },
   { key: 'joinDate', label: 'Customer Since', type: 'date' as const },
 ]
