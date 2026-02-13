@@ -15,17 +15,17 @@ const teams: {
   plan: string
 }[] = [
   {
-    name: 'Acme Inc',
+    name: 'AI Visual Pro',
     logo: 'i-lucide-gallery-vertical-end',
     plan: 'Enterprise',
   },
   {
-    name: 'Acme Corp.',
+    name: 'Full Stack CRM',
     logo: 'i-lucide-audio-waveform',
-    plan: 'Startup',
+    plan: 'Professional',
   },
   {
-    name: 'Evil Corp.',
+    name: 'Demo Workspace',
     logo: 'i-lucide-command',
     plan: 'Free',
   },
@@ -36,8 +36,8 @@ const user: {
   email: string
   avatar: string
 } = {
-  name: 'Dian Pratama',
-  email: 'dianpratama2@gmail.com',
+  name: 'Adeel Jabbar',
+  email: 'adeel@aivisualpro.com',
   avatar: '/avatars/avatartion.png',
 }
 
