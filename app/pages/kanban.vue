@@ -14,14 +14,18 @@ function createColumn() {
   showNewColumn.value = false
 }
 
+definePageMeta({
+  disableLayoutScroll: true,
+})
+
 const { setHeader } = usePageHeader()
 setHeader({ title: 'Kanban Board', icon: 'i-lucide-kanban', description: 'Visual task management with drag-and-drop' })
 </script>
 
 <template>
-  <div class="h-full">
-    <div class="flex flex-col gap-4 h-full">
-      <div class="flex items-center justify-end">
+  <div class="h-full flex flex-col overflow-hidden">
+    <div class="flex flex-col gap-4 h-full min-h-0 overflow-hidden">
+      <div class="flex items-center justify-end shrink-0">
         <Button size="sm" @click="showNewColumn = true">
           <Icon name="lucide:plus" />
           Add Column

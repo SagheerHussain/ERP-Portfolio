@@ -177,14 +177,30 @@ const OPTIONS: UseTimeAgoOptions<false, UseTimeAgoUnitNamesDefault> = {
   rounding: 'floor',
   updateInterval: 1000,
 }
+const limits = reactive<Record<string, number>>({})
+
+function getLimit(colId: string) {
+  if (limits[colId] === undefined)
+    limits[colId] = 20
+  return limits[colId]
+}
+
+function handleScroll(e: Event, colId: string) {
+  const target = e.target as HTMLElement
+  if (target.scrollTop + target.clientHeight >= target.scrollHeight - 20) {
+    if (limits[colId] < (board.value.columns.find(c => c.id === colId)?.tasks.length || 0)) {
+      limits[colId] += 20
+    }
+  }
+}
 </script>
 
 <template>
-  <div class="flex gap-4 overflow-x-auto overflow-y-hidden pb-4">
+  <div class="flex-1 flex gap-4 overflow-x-auto overflow-y-hidden pb-4 min-h-0">
     <!-- Columns Draggable wrapper -->
     <Draggable
       v-model="board.columns"
-      class="flex gap-4 min-w-max"
+      class="flex gap-4 min-w-max h-full"
       item-key="id"
       :animation="180"
       handle=".col-handle"
@@ -192,7 +208,7 @@ const OPTIONS: UseTimeAgoOptions<false, UseTimeAgoUnitNamesDefault> = {
       @end="onColumnDrop"
     >
       <template #item="{ element: col }: { element: Column }">
-        <Card class="w-[272px] shrink-0 py-2 gap-4 self-start">
+        <Card class="w-[272px] shrink-0 flex flex-col h-full max-h-full overflow-hidden py-2 gap-2">
           <CardHeader class="flex flex-row items-center justify-between gap-2 px-2">
             <CardTitle class="font-semibold text-base flex items-center gap-2">
               <Icon name="lucide:grip-vertical" class="col-handle cursor-grab opacity-60" />
@@ -229,7 +245,7 @@ const OPTIONS: UseTimeAgoOptions<false, UseTimeAgoUnitNamesDefault> = {
               </DropdownMenu>
             </CardAction>
           </CardHeader>
-          <CardContent class="px-2 overflow-y-auto overflow-x-hidden flex-1">
+          <CardContent class="px-2 overflow-y-auto overflow-x-hidden flex-1 min-h-0" @scroll="handleScroll($event, col.id)">
             <!-- Tasks within the column -->
             <Draggable
               v-model="col.tasks"
@@ -240,8 +256,8 @@ const OPTIONS: UseTimeAgoOptions<false, UseTimeAgoUnitNamesDefault> = {
               ghost-class="opacity-50"
               @end="onTaskDrop"
             >
-              <template #item="{ element: t }: { element: Task }">
-                <div class="rounded-xl border bg-card px-3 py-2 shadow-sm hover:bg-accent/50 cursor-pointer">
+              <template #item="{ element: t, index }: { element: Task, index: number }">
+                <div v-if="index < getLimit(col.id)" class="rounded-xl border bg-card px-3 py-2 shadow-sm hover:bg-accent/50 cursor-pointer">
                   <div class="flex items-start justify-between gap-2">
                     <div class="text-sm text-muted-foreground">
                       {{ t.id }}
