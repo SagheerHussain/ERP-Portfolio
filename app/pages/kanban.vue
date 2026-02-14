@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import KanbanBoard from '~/components/kanban/KanbanBoard.vue'
 
-const { addColumn } = useKanban()
+const { addColumn, resetBoard } = useKanban()
 
 const showNewColumn = ref(false)
 const newColumnTitle = ref('')
@@ -12,6 +12,12 @@ function createColumn() {
   addColumn(newColumnTitle.value.trim())
   newColumnTitle.value = ''
   showNewColumn.value = false
+}
+
+function handleReset() {
+  if (confirm('Reset board to include 100+ dummy records for performance testing?')) {
+    resetBoard()
+  }
 }
 
 definePageMeta({
@@ -25,7 +31,11 @@ setHeader({ title: 'Kanban Board', icon: 'i-lucide-kanban', description: 'Visual
 <template>
   <div class="h-full flex flex-col overflow-hidden">
     <div class="flex flex-col gap-4 h-full min-h-0 overflow-hidden">
-      <div class="flex items-center justify-end shrink-0">
+      <div class="flex items-center justify-end gap-2 shrink-0">
+        <Button size="sm" variant="outline" @click="handleReset">
+          <Icon name="i-lucide-refresh-cw" class="mr-1 size-4" />
+          Reset to Demo
+        </Button>
         <Button size="sm" @click="showNewColumn = true">
           <Icon name="lucide:plus" />
           Add Column

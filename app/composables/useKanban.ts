@@ -49,6 +49,19 @@ const defaultBoard: BoardState = {
           ],
           createdAt: new Date(Date.now() - 5 * 86400000).toISOString(),
         },
+        ...Array.from({ length: 100 }).map((_, i) => ({
+          id: `DUMMY-${(i + 1).toString().padStart(3, '0')}`,
+          title: `Performance Test Item #${i + 1}: ${['Database Optimization', 'UI Refactoring', 'API Integration', 'Security Audit', 'Customer Feedback'][i % 5]}`,
+          description: `This is a dummy task generated for testing the infinite scroll performance. Task #${i + 1} focuses on various aspects of the CRM development lifecycle including ${['unit testing', 'performance monitoring', 'security compliance', 'front-end polish'][i % 4]}.`,
+          priority: (['low', 'medium', 'high'][i % 3]) as any,
+          assignee: { id: 'u1', name: 'Sarah Chen', avatar: '/avatars/shadcn.png' },
+          dueDate: new Date(Date.now() + (i + 1) * 86400000).toISOString(),
+          status: 'backlog',
+          labels: ['Testing', 'Automated'],
+          createdAt: new Date().toISOString(),
+          subtasks: [],
+          comments: []
+        })),
         {
           id: 'TASK-002',
           title: 'Add CSV export to reports module',
@@ -579,6 +592,11 @@ export function useKanban() {
     persist()
   }
 
+  function resetBoard() {
+    board.value = JSON.parse(JSON.stringify(defaultBoard))
+    persist()
+  }
+
   return {
     board,
     addColumn,
@@ -594,5 +612,6 @@ export function useKanban() {
     removeSubtask,
     addComment,
     removeComment,
+    resetBoard,
   }
 }
