@@ -1,4 +1,7 @@
 <script setup lang="ts">
+definePageMeta({
+  disableLayoutScroll: true,
+})
 const columns = [
   { key: 'sku', label: 'SKU' },
   { key: 'product', label: 'Product' },

@@ -21,15 +21,16 @@ setHeader({ title: props.title, description: props.description, icon: props.icon
 
 // UI State
 const search = ref('')
-const currentPage = ref(1)
-const perPage = 10
+// Pagination -> Infinite Scroll
+const limit = ref(20)
+
+// Dialog States
 const showDialog = ref(false)
 const showDeleteDialog = ref(false)
 const editingItem = ref<any>(null)
 const deletingItem = ref<any>(null)
 const formData = ref<Record<string, any>>({})
 
-// Computed
 const filteredItems = computed(() => {
   if (!search.value)
     return items.value
@@ -41,13 +42,18 @@ const filteredItems = computed(() => {
   )
 })
 
-const totalPages = computed(() => Math.ceil(filteredItems.value.length / perPage))
-const paginatedItems = computed(() => {
-  const start = (currentPage.value - 1) * perPage
-  return filteredItems.value.slice(start, start + perPage)
-})
+const displayedItems = computed(() => filteredItems.value.slice(0, limit.value))
 
-watch(search, () => { currentPage.value = 1 })
+function handleScroll(e: Event) {
+  const target = e.target as HTMLElement
+  if (target.scrollTop + target.clientHeight >= target.scrollHeight - 20) {
+    if (limit.value < filteredItems.value.length) {
+      limit.value += 20
+    }
+  }
+}
+
+watch(search, () => { limit.value = 20 })
 
 // CRUD Handlers
 function openCreate() {
@@ -93,7 +99,7 @@ function handleDelete() {
 
 function handleReset() {
   reset()
-  currentPage.value = 1
+  limit.value = 20
   search.value = ''
   toast.info('Data has been reset to demo defaults')
 }
@@ -209,7 +215,7 @@ function getInitials(name: string): string {
 </script>
 
 <template>
-  <div class="w-full flex flex-col gap-6">
+  <div class="w-full h-full flex flex-col gap-6 overflow-hidden">
     <!-- Toolbar -->
     <div class="flex flex-wrap items-center justify-between gap-4">
       <div class="relative flex-1 max-w-sm">
@@ -232,8 +238,8 @@ function getInitials(name: string): string {
     </div>
 
     <!-- Table -->
-    <Card v-if="isLoaded">
-      <div class="overflow-x-auto">
+    <Card v-if="isLoaded" class="flex-1 min-h-0 flex flex-col overflow-hidden">
+      <div class="overflow-auto flex-1" @scroll="handleScroll">
         <Table>
           <TableHeader>
             <TableRow>
@@ -246,7 +252,7 @@ function getInitials(name: string): string {
             </TableRow>
           </TableHeader>
           <TableBody>
-            <TableRow v-for="item in paginatedItems" :key="item.id" class="group">
+            <TableRow v-for="item in displayedItems" :key="item.id" class="group">
               <TableCell v-for="col in columns" :key="col.key">
                 <!-- Avatar -->
                 <div v-if="col.type === 'avatar'" class="flex items-center gap-3">
@@ -303,7 +309,7 @@ function getInitials(name: string): string {
                 </div>
               </TableCell>
             </TableRow>
-            <TableRow v-if="paginatedItems.length === 0">
+            <TableRow v-if="displayedItems.length === 0">
               <TableCell :colspan="columns.length + 1" class="h-32 text-center">
                 <div class="flex flex-col items-center gap-2 text-muted-foreground">
                   <Icon name="i-lucide-inbox" class="size-8" />
@@ -329,23 +335,6 @@ function getInitials(name: string): string {
         <Skeleton class="h-8 w-3/4" />
       </div>
     </Card>
-
-    <!-- Pagination -->
-    <div v-if="totalPages > 1" class="flex flex-wrap items-center justify-between gap-2">
-      <p class="text-sm text-muted-foreground tabular-nums">
-        Showing {{ (currentPage - 1) * perPage + 1 }}–{{ Math.min(currentPage * perPage, filteredItems.length) }} of {{ filteredItems.length }}
-      </p>
-      <div class="flex gap-2">
-        <Button variant="outline" size="sm" :disabled="currentPage <= 1" @click="currentPage--">
-          <Icon name="i-lucide-chevron-left" class="mr-1 size-4" />
-          Previous
-        </Button>
-        <Button variant="outline" size="sm" :disabled="currentPage >= totalPages" @click="currentPage++">
-          Next
-          <Icon name="i-lucide-chevron-right" class="ml-1 size-4" />
-        </Button>
-      </div>
-    </div>
 
     <!-- Create/Edit Dialog -->
     <Dialog v-model:open="showDialog">

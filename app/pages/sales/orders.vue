@@ -1,4 +1,7 @@
 <script setup lang="ts">
+definePageMeta({
+  disableLayoutScroll: true,
+})
 import type { SalesDocument } from '~/composables/useSalesDocument'
 
 const statusOptions = [

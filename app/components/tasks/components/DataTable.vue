@@ -31,6 +31,7 @@ const sorting = ref<SortingState>([])
 const columnFilters = ref<ColumnFiltersState>([])
 const columnVisibility = ref<VisibilityState>({})
 const rowSelection = ref({})
+const limit = ref(20)
 
 const table = useVueTable({
   get data() { return props.data },
@@ -40,6 +41,7 @@ const table = useVueTable({
     get columnFilters() { return columnFilters.value },
     get columnVisibility() { return columnVisibility.value },
     get rowSelection() { return rowSelection.value },
+    get pagination() { return { pageIndex: 0, pageSize: limit.value } },
   },
   enableRowSelection: true,
   onSortingChange: updaterOrValue => valueUpdater(updaterOrValue, sorting),
@@ -53,12 +55,21 @@ const table = useVueTable({
   getFacetedRowModel: getFacetedRowModel(),
   getFacetedUniqueValues: getFacetedUniqueValues(),
 })
+
+function handleScroll(e: Event) {
+  const target = e.target as HTMLElement
+  if (target.scrollTop + target.clientHeight >= target.scrollHeight - 20) {
+    if (limit.value < props.data.length) {
+      limit.value += 20
+    }
+  }
+}
 </script>
 
 <template>
-  <div class="space-y-4">
+  <div class="space-y-4 h-full flex flex-col overflow-hidden">
     <DataTableToolbar :table="table" />
-    <div class="border rounded-md">
+    <div class="border rounded-md overflow-auto flex-1 min-h-0" @scroll="handleScroll">
       <Table>
         <TableHeader>
           <TableRow v-for="headerGroup in table.getHeaderGroups()" :key="headerGroup.id">
@@ -92,6 +103,6 @@ const table = useVueTable({
       </Table>
     </div>
 
-    <DataTablePagination :table="table" />
+    <!-- Removed DataTablePagination for Infinite Scroll -->
   </div>
 </template>

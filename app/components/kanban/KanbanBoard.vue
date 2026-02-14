@@ -188,8 +188,10 @@ function getLimit(colId: string) {
 function handleScroll(e: Event, colId: string) {
   const target = e.target as HTMLElement
   if (target.scrollTop + target.clientHeight >= target.scrollHeight - 20) {
-    if (limits[colId] < (board.value.columns.find(c => c.id === colId)?.tasks.length || 0)) {
-      limits[colId] += 20
+    const currentLimit = limits[colId] ?? 20
+    const totalTasks = board.value.columns.find(c => c.id === colId)?.tasks.length || 0
+    if (currentLimit < totalTasks) {
+      limits[colId] = currentLimit + 20
     }
   }
 }

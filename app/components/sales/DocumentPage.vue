@@ -29,8 +29,8 @@ const { items, isLoaded, createDoc, updateDoc, removeDoc, resetDocs } = useSales
 // ── State ──────────────────────────────────────────
 const search = ref('')
 const statusFilter = ref('all')
-const currentPage = ref(1)
-const perPage = 10
+// Pagination -> Infinite Scroll
+const limit = ref(20)
 
 // Form/Dialog State
 const showForm = ref(false)
@@ -58,14 +58,21 @@ const filteredItems = computed(() => {
   })
 })
 
-const totalPages = computed(() => Math.ceil(filteredItems.value.length / perPage))
-const paginatedItems = computed(() => {
-  const start = (currentPage.value - 1) * perPage
-  return filteredItems.value.slice(start, start + perPage)
+const displayedItems = computed(() => {
+  return filteredItems.value.slice(0, limit.value)
 })
 
-watch(search, () => { currentPage.value = 1 })
-watch(statusFilter, () => { currentPage.value = 1 })
+function handleScroll(e: Event) {
+  const target = e.target as HTMLElement
+  if (target.scrollTop + target.clientHeight >= target.scrollHeight - 20) {
+    if (limit.value < filteredItems.value.length) {
+      limit.value += 20
+    }
+  }
+}
+
+watch(search, () => { limit.value = 20 })
+watch(statusFilter, () => { limit.value = 20 })
 
 // ── Summary Stats ──────────────────────────────────
 const summaryStats = computed(() => {
@@ -175,6 +182,7 @@ function handleDelete() {
 
 function handleReset() {
   resetDocs()
+  limit.value = 20
   toast.success('Data reset to defaults')
 }
 
@@ -240,7 +248,7 @@ const previewHtml = computed(() => {
 </script>
 
 <template>
-  <div class="w-full flex flex-col gap-4">
+  <div class="w-full h-full flex flex-col gap-4 overflow-hidden">
     <!-- Summary Stats -->
     <div class="grid grid-cols-2 gap-3 md:grid-cols-4">
       <Card>
@@ -324,8 +332,8 @@ const previewHtml = computed(() => {
     </div>
 
     <!-- Table -->
-    <Card v-if="isLoaded">
-      <div class="overflow-x-auto">
+    <Card v-if="isLoaded" class="flex-1 min-h-0 flex flex-col overflow-hidden">
+      <div class="overflow-auto flex-1" @scroll="handleScroll">
         <Table>
           <TableHeader>
             <TableRow>
@@ -341,7 +349,7 @@ const previewHtml = computed(() => {
             </TableRow>
           </TableHeader>
           <TableBody>
-            <TableRow v-for="item in paginatedItems" :key="item.id" class="group cursor-pointer" @click="openDetail(item)">
+            <TableRow v-for="item in displayedItems" :key="item.id" class="group cursor-pointer" @click="openDetail(item)">
               <TableCell class="font-mono text-sm font-semibold">
                 {{ item.number }}
               </TableCell>
@@ -393,7 +401,7 @@ const previewHtml = computed(() => {
                 </div>
               </TableCell>
             </TableRow>
-            <TableRow v-if="paginatedItems.length === 0">
+            <TableRow v-if="displayedItems.length === 0">
               <TableCell :colspan="7" class="text-center py-12 text-muted-foreground">
                 <Icon name="i-lucide-inbox" class="size-8 mx-auto mb-2 opacity-40" />
                 <p>No {{ docType.toLowerCase() }}s found</p>
@@ -401,22 +409,6 @@ const previewHtml = computed(() => {
             </TableRow>
           </TableBody>
         </Table>
-      </div>
-
-      <!-- Pagination -->
-      <div v-if="totalPages > 1" class="flex items-center justify-between px-4 py-3 border-t">
-        <p class="text-xs text-muted-foreground">
-          {{ filteredItems.length }} result{{ filteredItems.length === 1 ? '' : 's' }}
-        </p>
-        <div class="flex items-center gap-1">
-          <Button variant="outline" size="icon" class="size-7" :disabled="currentPage <= 1" @click="currentPage--">
-            <Icon name="i-lucide-chevron-left" class="size-3.5" />
-          </Button>
-          <span class="text-xs px-2 tabular-nums">{{ currentPage }} / {{ totalPages }}</span>
-          <Button variant="outline" size="icon" class="size-7" :disabled="currentPage >= totalPages" @click="currentPage++">
-            <Icon name="i-lucide-chevron-right" class="size-3.5" />
-          </Button>
-        </div>
       </div>
     </Card>
 

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+definePageMeta({
+  disableLayoutScroll: true,
+})
 const columns = [
   { key: 'ticketId', label: 'Ticket #' },
   { key: 'subject', label: 'Subject' },

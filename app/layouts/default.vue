@@ -6,24 +6,32 @@ const isLayoutScrollDisabled = computed(() => route.meta.disableLayoutScroll ===
 </script>
 
 <template>
-  <SidebarProvider>
+  <SidebarProvider
+    :class="isLayoutScrollDisabled ? 'h-screen !min-h-0 overflow-hidden' : ''"
+  >
     <LayoutAppSidebar />
     <SidebarInset
       :class="cn(
-        'flex flex-col h-screen',
-        !isLayoutScrollDisabled && 'overflow-y-auto'
+        'flex flex-col',
+        isLayoutScrollDisabled ? 'h-screen overflow-hidden' : ''
       )"
     >
       <LayoutHeader />
-      <div class="flex flex-col flex-1">
-        <div class="@container/main p-4 lg:p-6 grow">
+      <div
+        :class="cn(
+          'flex flex-col flex-1 min-h-0',
+          isLayoutScrollDisabled ? 'overflow-hidden' : 'overflow-y-auto'
+        )"
+      >
+        <div
+          :class="cn(
+            '@container/main p-4 lg:p-6',
+            isLayoutScrollDisabled ? 'flex-1 min-h-0 flex flex-col overflow-hidden' : 'grow'
+          )"
+        >
           <slot />
         </div>
       </div>
     </SidebarInset>
   </SidebarProvider>
 </template>
-
-<style scoped>
-
-</style>
